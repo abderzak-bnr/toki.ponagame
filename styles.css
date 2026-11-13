@@ -1,0 +1,1663 @@
+/* ==========================================================================
+   TOKI PONA DUOLINGO - NEO-BRUTALIST CYBER-POP DARK THEME
+   Tailored for Arabic (RTL) with LTR Toki Pona preservation
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --bg-pure: #000000;
+  --bg-surface: #111111;
+  --bg-surface-elevated: #18181B;
+  --bg-surface-hover: #222225;
+  --border-subtle: #27272A;
+  --border-strong: #3F3F46;
+  
+  /* Accents */
+  --accent-lime: #B8FF29;
+  --accent-lime-dim: rgba(184, 255, 41, 0.15);
+  --accent-lime-glow: rgba(184, 255, 41, 0.4);
+  --accent-pink: #FF4FA3;
+  --accent-pink-dim: rgba(255, 79, 163, 0.15);
+  --accent-pink-glow: rgba(255, 79, 163, 0.4);
+  --accent-cyan: #00F0FF;
+  --accent-cyan-dim: rgba(0, 240, 255, 0.15);
+  --accent-yellow: #FFE600;
+  --accent-red: #FF3366;
+  --accent-red-dim: rgba(255, 51, 102, 0.15);
+
+  /* Typography Colors */
+  --text-main: #FFFFFF;
+  --text-secondary: #E4E4E7;
+  --text-muted: #A1A1AA;
+  --text-dim: #71717A;
+  --text-inverse: #000000;
+
+  /* Typography Families */
+  --font-arabic: 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-toki: 'Space Grotesk', -apple-system, monospace, sans-serif;
+
+  /* Neo-Brutalism Shadows */
+  --shadow-neo-lime: 4px 4px 0px var(--accent-lime);
+  --shadow-neo-pink: 4px 4px 0px var(--accent-pink);
+  --shadow-neo-cyan: 4px 4px 0px var(--accent-cyan);
+  --shadow-neo-black: 4px 4px 0px rgba(0, 0, 0, 0.9);
+  --shadow-neo-subtle: 3px 3px 0px #27272A;
+
+  /* Sizing & Transitions */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background-color: var(--bg-pure);
+  color: var(--text-main);
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Monospace & LTR text for Toki Pona Latin */
+.toki-text, [dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+  font-family: var(--font-toki);
+  letter-spacing: 0.5px;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-pure);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 768px;
+  margin: 0 auto;
+  position: relative;
+  background-color: var(--bg-pure);
+  border-inline: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   TOP HUD BAR
+   ========================================================================== */
+.top-hud {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--border-subtle);
+  gap: 12px;
+}
+
+.hud-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.hud-logo-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--accent-lime);
+  color: var(--bg-pure);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 20px;
+  box-shadow: 2px 2px 0px #FFFFFF;
+}
+
+.hud-title-group h1 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.hud-title-group p {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-lime);
+  letter-spacing: 0.5px;
+}
+
+.hud-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hud-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 700;
+  transition: var(--transition-fast);
+}
+
+.hud-badge:hover {
+  border-color: var(--border-strong);
+}
+
+.hud-badge.streak {
+  color: var(--accent-pink);
+  border-color: rgba(255, 79, 163, 0.3);
+}
+
+.hud-badge.xp {
+  color: var(--accent-lime);
+  border-color: rgba(184, 255, 41, 0.3);
+}
+
+.hud-badge.hearts {
+  color: var(--accent-red);
+  border-color: rgba(255, 51, 102, 0.3);
+}
+
+.hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.hud-btn:hover {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--accent-lime);
+  color: var(--accent-lime);
+  transform: translateY(-1px);
+}
+
+.hud-btn:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   SKILL TREE & UNIT PATH VIEW
+   ========================================================================== */
+.skill-tree-view {
+  flex: 1;
+  padding: 24px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* Unit Card Banner */
+.unit-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.unit-banner {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-neo-subtle);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.unit-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  background-color: var(--unit-color, var(--accent-lime));
+}
+
+.unit-banner-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.unit-number-tag {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--unit-color, var(--accent-lime));
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.unit-icon {
+  font-size: 24px;
+}
+
+.unit-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.unit-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Lesson Nodes Path (Curved/Zigzag Layout) */
+.lesson-path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.lesson-node-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform var(--transition-normal);
+}
+
+/* Offset nodes left/center/right in Duolingo style */
+.lesson-node-wrapper.pos-0 { transform: translateX(0); }
+.lesson-node-wrapper.pos-1 { transform: translateX(36px); }
+.lesson-node-wrapper.pos-2 { transform: translateX(-36px); }
+.lesson-node-wrapper.pos-3 { transform: translateX(18px); }
+
+.lesson-node-btn {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background-color: var(--bg-surface-elevated);
+  border: 4px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 6px 0px #09090B;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.lesson-node-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0px #09090B;
+  border-color: var(--accent-lime);
+}
+
+.lesson-node-btn:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0px #09090B;
+}
+
+/* Node States */
+.lesson-node-wrapper.active .lesson-node-btn {
+  background-color: var(--accent-lime);
+  color: #000000;
+  border-color: #FFFFFF;
+  box-shadow: 0 6px 0px rgba(184, 255, 41, 0.4), 0 0 24px var(--accent-lime-glow);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.lesson-node-wrapper.completed .lesson-node-btn {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  border-color: #FFFFFF;
+  box-shadow: 0 6px 0px rgba(255, 230, 0, 0.3);
+}
+
+.lesson-node-wrapper.locked .lesson-node-btn {
+  background-color: #18181B;
+  color: var(--text-dim);
+  border-color: #27272A;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.node-icon-svg {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.node-icon-svg svg {
+  width: 100%;
+  height: 100%;
+}
+
+.node-star-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--accent-pink);
+  color: #FFFFFF;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  border: 2px solid #000000;
+  font-weight: 800;
+}
+
+.node-title-label {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background-color: rgba(17, 17, 17, 0.9);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+/* ==========================================================================
+   INTERACTIVE LESSON MODAL / ARENA
+   ========================================================================== */
+.lesson-arena {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: var(--bg-pure);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.arena-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  gap: 16px;
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.arena-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.arena-close-btn:hover {
+  color: #FFFFFF;
+  background-color: var(--bg-surface);
+}
+
+/* Progress Bar */
+.arena-progress-track {
+  flex: 1;
+  height: 14px;
+  background-color: #27272A;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #18181B;
+}
+
+.arena-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #95E600, var(--accent-lime));
+  border-radius: var(--radius-pill);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12px var(--accent-lime-glow);
+}
+
+.arena-hearts {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--accent-pink);
+}
+
+/* Arena Body */
+.arena-body {
+  flex: 1;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.exercise-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideUp 0.25s ease-out;
+}
+
+/* Question Prompt Typography */
+.exercise-prompt-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.exercise-prompt-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   EXERCISE 1: NEW WORD INTRODUCTION CARD
+   -------------------------------------------------------------------------- */
+.intro-card {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-neo-lime);
+  position: relative;
+  gap: 16px;
+}
+
+.intro-badge {
+  position: absolute;
+  top: -12px;
+  background-color: var(--accent-lime);
+  color: #000000;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 3px 14px;
+  border-radius: var(--radius-pill);
+  border: 2px solid #000000;
+  text-transform: uppercase;
+}
+
+.intro-glyph-box {
+  width: 110px;
+  height: 110px;
+  background-color: #000000;
+  border: 2px solid var(--accent-lime);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  color: var(--accent-lime);
+  box-shadow: 0 0 20px var(--accent-lime-dim);
+}
+
+.intro-glyph-box svg {
+  width: 100%;
+  height: 100%;
+}
+
+.intro-word-latin {
+  font-family: var(--font-toki);
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.intro-phonetic {
+  font-size: 14px;
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.intro-arabic-meaning {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent-lime);
+  background-color: rgba(184, 255, 41, 0.08);
+  padding: 8px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(184, 255, 41, 0.2);
+}
+
+.intro-hint {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  background-color: var(--bg-surface-elevated);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border-right: 4px solid var(--accent-pink);
+  width: 100%;
+  text-align: right;
+}
+
+.intro-audio-btn {
+  background-color: var(--accent-pink);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: var(--radius-pill);
+  padding: 10px 24px;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 3px 3px 0px #000000;
+  transition: var(--transition-fast);
+}
+
+.intro-audio-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.intro-example-box {
+  width: 100%;
+  background-color: #0A0A0A;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.intro-example-tp {
+  font-family: var(--font-toki);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  direction: ltr;
+  text-align: left;
+}
+
+.intro-example-ar {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   EXERCISE 2: MULTIPLE CHOICE CARDS
+   -------------------------------------------------------------------------- */
+.mc-prompt-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  gap: 16px;
+}
+
+.mc-prompt-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mc-prompt-glyph {
+  width: 52px;
+  height: 52px;
+  color: var(--accent-lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mc-prompt-glyph svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mc-prompt-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.mc-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .mc-options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mc-option-card {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow-neo-subtle);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.mc-option-card:hover {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.mc-option-card.selected {
+  background-color: rgba(184, 255, 41, 0.1);
+  border-color: var(--accent-lime);
+  box-shadow: 3px 3px 0px var(--accent-lime);
+}
+
+.mc-option-card.correct {
+  background-color: rgba(184, 255, 41, 0.2) !important;
+  border-color: var(--accent-lime) !important;
+}
+
+.mc-option-card.wrong {
+  background-color: rgba(255, 51, 102, 0.2) !important;
+  border-color: var(--accent-red) !important;
+}
+
+.mc-option-index {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: #27272A;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mc-option-card.selected .mc-option-index {
+  background-color: var(--accent-lime);
+  color: #000000;
+}
+
+.mc-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.mc-option-main {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.mc-option-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.mc-option-glyph-preview {
+  width: 32px;
+  height: 32px;
+  color: var(--accent-lime);
+  flex-shrink: 0;
+}
+
+.mc-option-glyph-preview svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   EXERCISE 3: WORD BANK SENTENCE BUILDER (Duolingo signature chip mechanic)
+   -------------------------------------------------------------------------- */
+.builder-target-box {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.builder-prompt-sentence {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.builder-audio-trigger {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-pill);
+  background-color: var(--accent-pink);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 2px 2px 0px #000000;
+  flex-shrink: 0;
+}
+
+/* Answer Slot */
+.builder-answer-zone {
+  min-height: 80px;
+  background-color: #000000;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  direction: ltr; /* Toki Pona is left-to-right */
+  justify-content: flex-start;
+  transition: border-color var(--transition-fast);
+}
+
+.builder-answer-zone:empty::before {
+  content: 'اضغط على الكلمات بالترتيب لبناء الجملة...';
+  direction: rtl;
+  font-family: var(--font-arabic);
+  font-size: 14px;
+  color: var(--text-dim);
+  width: 100%;
+  text-align: center;
+}
+
+/* Word Bank */
+.builder-bank-zone {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  direction: ltr;
+  padding: 10px 0;
+}
+
+.word-chip {
+  background-color: var(--bg-surface-elevated);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-family: var(--font-toki);
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 0px #000000;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.word-chip:hover {
+  border-color: var(--accent-lime);
+  color: var(--accent-lime);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0px #000000;
+}
+
+.word-chip:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0px #000000;
+}
+
+.word-chip.in-answer {
+  background-color: var(--bg-surface);
+  border-color: var(--accent-lime);
+  color: var(--accent-lime);
+  box-shadow: 2px 2px 0px var(--accent-lime);
+}
+
+.word-chip.disabled {
+  opacity: 0.25;
+  cursor: default;
+  transform: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+.chip-glyph {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip-glyph svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   EXERCISE 4: SPEED MATCHING PAIRS
+   -------------------------------------------------------------------------- */
+.matching-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.match-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.match-item-card {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 60px;
+  box-shadow: var(--shadow-neo-subtle);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.match-item-card:hover:not(.locked) {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.match-item-card.selected {
+  border-color: var(--accent-cyan);
+  background-color: var(--accent-cyan-dim);
+  box-shadow: 3px 3px 0px var(--accent-cyan);
+}
+
+.match-item-card.matched {
+  border-color: var(--accent-lime) !important;
+  background-color: var(--accent-lime-dim) !important;
+  box-shadow: 3px 3px 0px var(--accent-lime) !important;
+  animation: matchPulse 0.4s ease-out;
+}
+
+.match-item-card.locked {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+  border-style: dashed;
+}
+
+.match-item-card.mismatch {
+  border-color: var(--accent-red) !important;
+  background-color: var(--accent-red-dim) !important;
+  animation: shake 0.4s ease-in-out;
+}
+
+.match-glyph-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--accent-lime);
+  flex-shrink: 0;
+}
+
+.match-glyph-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.match-text-tp {
+  font-family: var(--font-toki);
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  direction: ltr;
+}
+
+.match-text-ar {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   EXERCISE 5: LISTENING CHALLENGE
+   -------------------------------------------------------------------------- */
+.listening-center-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-neo-pink);
+}
+
+.listening-triggers-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.listening-big-audio-btn {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: var(--accent-pink);
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 0px #000000;
+  transition: transform var(--transition-fast);
+}
+
+.listening-big-audio-btn:hover {
+  transform: scale(1.06);
+}
+
+.listening-big-audio-btn:active {
+  transform: scale(0.95);
+}
+
+.listening-slow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--bg-surface-elevated);
+  border: 2px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0px #000000;
+  transition: transform var(--transition-fast);
+}
+
+.listening-slow-btn:hover {
+  transform: scale(1.08);
+  background-color: var(--accent-cyan-dim);
+}
+
+/* ==========================================================================
+   FOOTER CHECK BAR (Duolingo signature bottom bar)
+   ========================================================================== */
+.arena-footer {
+  border-top: 2px solid var(--border-subtle);
+  padding: 16px 20px;
+  background-color: var(--bg-surface);
+  position: relative;
+  z-index: 60;
+  transition: background-color var(--transition-normal);
+}
+
+.arena-footer-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-feedback-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+.footer-feedback-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.footer-feedback-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.feedback-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Footer State Variations */
+.arena-footer.correct {
+  background-color: #0E2905;
+  border-top-color: var(--accent-lime);
+}
+
+.arena-footer.correct .footer-feedback-icon {
+  background-color: var(--accent-lime);
+  color: #000000;
+}
+
+.arena-footer.correct .feedback-title {
+  color: var(--accent-lime);
+}
+
+.arena-footer.wrong {
+  background-color: #2D0912;
+  border-top-color: var(--accent-red);
+}
+
+.arena-footer.wrong .footer-feedback-icon {
+  background-color: var(--accent-red);
+  color: #FFFFFF;
+}
+
+.arena-footer.wrong .feedback-title {
+  color: var(--accent-red);
+}
+
+/* Main Action Button */
+.arena-check-btn {
+  background-color: var(--accent-lime);
+  color: #000000;
+  border: 2px solid #FFFFFF;
+  border-radius: var(--radius-pill);
+  padding: 14px 36px;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.arena-check-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px #000000;
+}
+
+.arena-check-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.arena-check-btn:disabled {
+  background-color: #27272A;
+  color: var(--text-dim);
+  border-color: #18181B;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.arena-check-btn.btn-continue-correct {
+  background-color: var(--accent-lime);
+  color: #000000;
+}
+
+.arena-check-btn.btn-continue-wrong {
+  background-color: var(--accent-red);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   VICTORY / COMPLETION CELEBRATION MODAL
+   ========================================================================== */
+.victory-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.victory-card {
+  background-color: var(--bg-surface);
+  border: 3px solid var(--accent-lime);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-neo-lime);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  animation: popIn 0.4s var(--transition-spring);
+}
+
+.victory-trophy {
+  font-size: 64px;
+  animation: bounce 1s infinite alternate;
+}
+
+.victory-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--accent-lime);
+}
+
+.victory-subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.victory-stats-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.victory-stat-box {
+  flex: 1;
+  background-color: var(--bg-surface-elevated);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.victory-stat-value {
+  font-size: 22px;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+.victory-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   MINI GLOSSARY DRAWER
+   ========================================================================== */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.glossary-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  max-width: 480px;
+  background-color: var(--bg-surface);
+  border-left: 2px solid var(--border-strong);
+  z-index: 160;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.8);
+  animation: slideDrawerRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-header {
+  padding: 18px 20px;
+  border-bottom: 2px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drawer-title-group h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.drawer-title-group p {
+  font-size: 12px;
+  color: var(--accent-lime);
+}
+
+.drawer-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.drawer-search-bar {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  flex: 1;
+  background-color: #000000;
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  padding: 10px 16px;
+  color: #FFFFFF;
+  font-family: var(--font-arabic);
+  font-size: 14px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--accent-lime);
+}
+
+.filter-pills-row {
+  padding: 10px 20px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.filter-pill {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-pill.active {
+  background-color: var(--accent-lime);
+  color: #000000;
+  border-color: var(--accent-lime);
+}
+
+.drawer-words-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.glossary-word-item {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition-fast);
+}
+
+.glossary-word-item:hover {
+  border-color: var(--border-strong);
+  background-color: var(--bg-surface-hover);
+}
+
+.glossary-glyph-box {
+  width: 44px;
+  height: 44px;
+  background-color: #000000;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-lime);
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.glossary-glyph-box svg {
+  width: 100%;
+  height: 100%;
+}
+
+.glossary-word-info {
+  flex: 1;
+}
+
+.glossary-word-top {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.glossary-toki-latin {
+  font-family: var(--font-toki);
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.glossary-phonetic {
+  font-size: 12px;
+  color: var(--accent-cyan);
+}
+
+.glossary-meaning-ar {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.glossary-audio-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-pink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: var(--transition-fast);
+}
+
+.glossary-audio-btn:hover {
+  background-color: var(--accent-pink-dim);
+  border-color: var(--accent-pink);
+}
+
+/* ==========================================================================
+   SETTINGS / RESET MODAL
+   ========================================================================== */
+.settings-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.settings-card {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-header h3 {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.settings-row-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.settings-row-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.btn-danger {
+  background-color: var(--accent-red);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #000000;
+  transition: var(--transition-fast);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0px #000000;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #27272A;
+  border-radius: 34px;
+  transition: 0.2s;
+  border: 1px solid var(--border-strong);
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-lime);
+}
+
+input:checked + .slider::before {
+  transform: translateX(22px);
+  background-color: #000000;
+}
+
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 6px 0px rgba(184, 255, 41, 0.4), 0 0 16px var(--accent-lime-glow);
+  }
+  50% {
+    box-shadow: 0 6px 0px rgba(184, 255, 41, 0.7), 0 0 30px var(--accent-lime);
+  }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(16px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDrawerRight {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes matchPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+}
