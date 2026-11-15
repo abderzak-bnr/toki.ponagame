@@ -52,9 +52,21 @@
       </div>
 
       <div class="hud-actions">
+        <!-- Cloud Sync & Auth Button -->
+        <button class="hud-btn hud-auth-btn" id="hud-auth-btn" title="حفظ التقدم السحابي / تسجيل الدخول">
+          <span id="hud-auth-icon">☁️</span>
+          <span class="hud-auth-label" id="hud-auth-label">حفظ التقدم</span>
+        </button>
+
+        <!-- Dedicated Grammar Guidebook Button -->
+        <button class="hud-btn hud-grammar-btn" id="hud-grammar-btn" title="دليل القواعد النحوية">
+          <span>📖</span>
+          <span class="hud-grammar-label">القواعد</span>
+        </button>
+
         <!-- Mini Glossary Button -->
         <button class="hud-btn" id="hud-glossary-btn" title="معجم الكلمات والرموز (137 كلمة)">
-          📖
+          📚
         </button>
 
         <!-- Settings Button -->
@@ -179,6 +191,31 @@
   </div>
 
   <!-- ======================================================================
+       GRAMMAR GUIDEBOOK DRAWER / MODAL (📖 دليل القواعد)
+       ====================================================================== -->
+  <div class="drawer-backdrop" id="grammar-guide-modal" style="display: none;" onclick="if(event.target === this) app.closeModal('grammar-guide-modal')">
+    <aside class="glossary-drawer grammar-guide-drawer">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <h2>📖 دليل قواعد توكي بونا الكامل</h2>
+          <p>أسرار القواعد والبناء اللغوي المبسط</p>
+        </div>
+        <button class="drawer-close-btn" onclick="app.closeModal('grammar-guide-modal')">✕</button>
+      </div>
+
+      <!-- Quick Jump Rule Tabs -->
+      <div class="filter-pills-row guide-rule-tabs" id="guide-rule-tabs">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Rule Cards Container -->
+      <div class="guide-cards-scroll" id="grammar-guide-cards-list">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </aside>
+  </div>
+
+  <!-- ======================================================================
        SETTINGS MODAL
        ====================================================================== -->
   <div class="settings-modal-overlay" id="settings-modal" style="display: none;" onclick="if(event.target === this) app.closeModal('settings-modal')">
@@ -224,6 +261,109 @@
       </div>
     </div>
   </div>
+
+  <!-- ======================================================================
+       AUTHENTICATION & CLOUD SYNC MODAL (تسجيل الدخول / حفظ التقدم)
+       ====================================================================== -->
+  <div class="settings-modal-overlay" id="auth-modal" style="display: none;" onclick="if(event.target === this) app.closeModal('auth-modal')">
+    <div class="settings-card auth-modal-card">
+      <div class="settings-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 22px;">☁️</span>
+          <h3 id="auth-modal-title">الحفظ السحابي للحساب</h3>
+        </div>
+        <button class="drawer-close-btn" onclick="app.closeModal('auth-modal')">✕</button>
+      </div>
+
+      <!-- Logged-Out View (Tabs: Login & Signup) -->
+      <div id="auth-logged-out-view">
+        <div class="auth-tabs-row">
+          <button class="auth-tab-btn active" id="tab-btn-login" onclick="app.switchAuthTab('login')">تسجيل الدخول</button>
+          <button class="auth-tab-btn" id="tab-btn-signup" onclick="app.switchAuthTab('signup')">إنشاء حساب جديد</button>
+        </div>
+
+        <!-- Form: Login -->
+        <form id="form-login" class="auth-form" onsubmit="event.preventDefault(); app.handleLogin();">
+          <div class="auth-field">
+            <label for="login-email">البريد الإلكتروني</label>
+            <input type="email" id="login-email" class="auth-input" placeholder="name@example.com" required dir="ltr">
+          </div>
+          <div class="auth-field">
+            <label for="login-password">كلمة المرور</label>
+            <input type="password" id="login-password" class="auth-input" placeholder="••••••••" required dir="ltr">
+          </div>
+          <div class="auth-status-msg" id="login-status-msg" style="display:none;"></div>
+          <button type="submit" class="arena-check-btn btn-continue-correct auth-submit-btn" id="login-submit-btn">
+            تسجيل الدخول ومزامنة التقدم ⚡
+          </button>
+        </form>
+
+        <!-- Form: Sign Up -->
+        <form id="form-signup" class="auth-form" style="display:none;" onsubmit="event.preventDefault(); app.handleSignUp();">
+          <div class="auth-field">
+            <label for="signup-email">البريد الإلكتروني</label>
+            <input type="email" id="signup-email" class="auth-input" placeholder="name@example.com" required dir="ltr">
+          </div>
+          <div class="auth-field">
+            <label for="signup-password">كلمة المرور (6 خانات على الأقل)</label>
+            <input type="password" id="signup-password" class="auth-input" placeholder="••••••••" minlength="6" required dir="ltr">
+          </div>
+          <div class="auth-field">
+            <label for="signup-confirm-password">تأكيد كلمة المرور</label>
+            <input type="password" id="signup-confirm-password" class="auth-input" placeholder="••••••••" minlength="6" required dir="ltr">
+          </div>
+          <div class="auth-status-msg" id="signup-status-msg" style="display:none;"></div>
+          <button type="submit" class="arena-check-btn btn-continue-correct auth-submit-btn" id="signup-submit-btn">
+            إنشاء الحساب وحفظ التقدم ✨
+          </button>
+        </form>
+
+        <p class="auth-footer-note">
+          🔒 بياناتك مشفرة ومحفوظة عبر خوادم Supabase الآمنة بتقنية Row Level Security.
+        </p>
+      </div>
+
+      <!-- Logged-In View (Account Details & Cloud Sync Status) -->
+      <div id="auth-logged-in-view" style="display:none;">
+        <div class="auth-profile-box">
+          <div class="auth-avatar-circle">👤</div>
+          <div class="auth-user-info">
+            <span class="auth-user-email-text" id="auth-profile-email" dir="ltr">user@example.com</span>
+            <span class="auth-sync-status-badge" id="auth-sync-status-badge">
+              <span class="sync-dot"></span> متزامن مع السحابة
+            </span>
+          </div>
+        </div>
+
+        <div class="auth-stats-grid">
+          <div class="auth-stat-card">
+            <span class="stat-num" id="auth-synced-xp">0</span>
+            <span class="stat-lbl">نقاط الخبرة (XP)</span>
+          </div>
+          <div class="auth-stat-card">
+            <span class="stat-num" id="auth-synced-streak">1 🔥</span>
+            <span class="stat-lbl">الحماس اليومي</span>
+          </div>
+          <div class="auth-stat-card">
+            <span class="stat-num" id="auth-synced-lessons">0</span>
+            <span class="stat-lbl">الدروس المكتملة</span>
+          </div>
+        </div>
+
+        <div class="auth-actions-group">
+          <button class="arena-check-btn auth-sync-btn" id="btn-manual-sync" onclick="app.manualSync()">
+            مزامنة السحابة الآن 🔄
+          </button>
+          <button class="btn-danger auth-logout-btn" onclick="app.handleSignOut()">
+            تسجيل الخروج 🚪
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supabase JS Client via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <!-- Application Scripts -->
   <script src="glyphs.js"></script>

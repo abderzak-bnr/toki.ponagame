@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Complete Toki Pona Curriculum (137 words: 120 pu + 17 ku suli)
  * 10 Progressive Units, 3-4 Lessons per Unit
  * Tailored specifically for Arabic Speakers
@@ -1398,532 +1398,748 @@ window.TOKI_DATA = {
     }
   },
 
-  // 10 Progressive Units Definition with metadata & lessons
+  // --- TOKI PONA GRAMMAR GUIDEBOOK (10 Progressive Rules, Formulas & Explanations in Arabic) ---
+  grammarGuide: [
+    {
+      id: "rule_noun_adjective",
+      unitId: 1,
+      title: "القاعدة 1: ترتيب الاسم والصفة والمبتدأ البسيط",
+      subtitle: "الموصوف أولاً ثم الصفة، واستخدام mi و sina بدون li",
+      explanation: [
+        "في لغة توكي بونا، يأتي الاسم أولاً ثم تأتي الصفة التي تعدله بعده مباشرة (مثل العربية تماماً: رجلٌ طيب = jan pona).",
+        "وعندما يكون الفاعل هو الضمير 'mi' (أنا) أو 'sina' (أنت) بمفرده، نضع الفعل أو الصفة بعده مباشرة بدون أي أداة ربط (mi moku = أنا آكل)."
+      ],
+      formula: "[الاسم الموصوف] + <span class=\"highlight-pink\">[الصفة]</span><br>[mi / sina] + [فعل / صفة]",
+      formulaExplanation: "الكلمة الأولى هي الأساس، والكلمة الثانية تصفها. ومع mi و sina المفردتين لا نضع li مطلقاً.",
+      examples: [
+        { tp: "jan pona", ar: "شخص طيب (صديق)", hint: "الاسم jan يسبق الصفة pona" },
+        { tp: "toki pona", ar: "لغة توكي بونا (الكلام الطيب)", hint: "الموصوف toki والصفة pona" },
+        { tp: "mi jan", ar: "أنا إنسان (بدون li)", hint: "فاعل mi لا يأخذ li" },
+        { tp: "sina pona", ar: "أنت طيب ورائع (بدون li)", hint: "فاعل sina لا يأخذ li" }
+      ],
+      warning: "خطأ شائع: لا تقل 'pona jan'، بل قل دائماً 'jan pona'. وتذكر حذف li بعد mi و sina المفردتين!",
+      quickTip: "تذكر: تماماً كما في لغتنا العربية (صديقٌ طيب)، نكتب في توكي بونا (jan pona)."
+    },
+    {
+      id: "rule_li",
+      unitId: 2,
+      title: "القاعدة 2: أداة الربط li مع الضمير الغائب والأسماء",
+      subtitle: "أهم أداة نحوية لفصل الفاعل عن الفعل أو الوصف",
+      explanation: [
+        "أداة الربط 'li' تُوضع دائماً بعد الفاعل لفصله عن الفعل أو الصفة التي تصفه.",
+        "نستخدم 'li' مع ضمير الغائب 'ona' (هو/هي/هم) ومع جميع الأسماء الصريحة (مثل jan و soweli و suno)."
+      ],
+      formula: "[ona / أي اسم صريح] + <span class=\"highlight-pink\">li</span> + [فعل / صفة]",
+      formulaExplanation: "مع ona والأسماء الصريحة نضع li دائماً لفصل الفاعل عن الخبر.",
+      examples: [
+        { tp: "ona li jan", ar: "هو إنسان", hint: "ona ضمير غائب يحتاج li" },
+        { tp: "suno li suli", ar: "الشمس عظيمة ومشرقة", hint: "suno اسم صريح يحتاج li" },
+        { tp: "soweli li lape", ar: "الحيوان ينام", hint: "soweli اسم صريح يحتاج li" },
+        { tp: "kasi li pona", ar: "النبات مزهر وجميل", hint: "kasi اسم صريح يحتاج li" }
+      ],
+      warning: "تحذير: لا تحذف li مع ona أو الأسماء، وتذكر حذفها فقط مع mi و sina المفردتين!",
+      quickTip: "القاعدة الذهبية: 'mi' و 'sina' أصدقاء بدون li، أما 'ona' وبقية الكلمات فتحتاج li دائماً!"
+    },
+    {
+      id: "rule_e",
+      unitId: 3,
+      title: "القاعدة 3: أداة المفعول به المباشر e",
+      subtitle: "تحديد الشيء أو الكائن الذي يقع عليه الفعل",
+      explanation: [
+        "عندما يقوم الفاعل بفعل متعدٍ يقع على مفعول به، نضع الأداة 'e' مباشرة قبل المفعول به.",
+        "أداة 'e' بمفردها ليس لها معنى حسي، بل وظيفتها النحوية فقط التنبيه: الكلمة التالية هي المفعول به!"
+      ],
+      formula: "[فاعل] + (li) + [فعل متعدٍ] + <span class=\"highlight-pink\">e</span> + [المفعول به]",
+      formulaExplanation: "تأتي e دائماً قبل الاسم الذي وقع عليه الفعل.",
+      examples: [
+        { tp: "mi moku e kili", ar: "أنا آكل الفاكهة", hint: "kili هي المأكول فسبقتها e" },
+        { tp: "ona li jo e pan", ar: "هو يملك خبزاً", hint: "pan هو المملوك فسبقته e" },
+        { tp: "mi wile e telo", ar: "أريد ماءً", hint: "telo هو المطلوب فسبقته e" },
+        { tp: "ona li lukin e lipu", ar: "هو يقرأ كتاباً أو وثيقة", hint: "lipu هو المقروء فسبقته e" }
+      ],
+      warning: "انتبه: الأفعال اللازمة أو حروف الجر (مثل lon أو tawa) لا تحتاج e (مثل: mi lon tomo).",
+      quickTip: "إذا كان الفعل يقع على شيء: ضع 'e' قبل ذلك الشيء فوراً!"
+    },
+    {
+      id: "rule_prepositions",
+      unitId: 4,
+      title: "القاعدة 4: حروف الجر والمكان الخمسة",
+      subtitle: "lon (في/على)، tawa (إلى)، tan (من)، kepeken (بواسطة)، sama (مثل)",
+      explanation: [
+        "في توكي بونا، حروف الجر الخمسة (lon, tawa, tan, kepeken, sama) تأتي بعد الفعل مباشرة بدون أداة e.",
+        "فهي تحدد الموقع أو الاتجاه أو الأصل أو الأداة، ولا تُعامل معاملة المفعول به المباشر."
+      ],
+      formula: "[فاعل] + (li) + [فعل] + <span class=\"highlight-pink\">[lon / tawa / tan / kepeken / sama]</span> + [الاسم]",
+      formulaExplanation: "حروف الجر لا تسبقها e عندما تؤدي وظيفة حرف الجر.",
+      examples: [
+        { tp: "mi lon tomo", ar: "أنا في البيت (lon = في/على)", hint: "lon حرف جر مكان بدون e" },
+        { tp: "ona li tawa ma", ar: "هو يذهب إلى الريف (tawa = إلى)", hint: "tawa حرف جر اتجاه بدون e" },
+        { tp: "mi kama tan ma suli", ar: "أنا قادم من بلد كبير (tan = من)", hint: "tan حرف جر أصل بدون e" },
+        { tp: "mi kepeken ilo", ar: "أنا أستخدم أداة (kepeken = بواسطة)", hint: "kepeken حرف جر وسيلة بدون e" },
+        { tp: "ona li sama mi", ar: "هو يشبهني تماماً (sama = مثل)", hint: "sama حرف جر مقارنة" }
+      ],
+      warning: "خطأ شائع: لا تقل 'mi tawa e tomo' بل قل 'mi tawa tomo' لأن tawa هنا تعني 'إلى' كحرف جر.",
+      quickTip: "تذكر: حروف الجر تأتي مباشرة قبل المكان أو الأداة بدون وضع e قبلها!"
+    },
+    {
+      id: "rule_negation_question",
+      unitId: 5,
+      title: "القاعدة 5: النفي وأدوات الاستفهام (ala و seme)",
+      subtitle: "كيف تنفي وتسأل دون تغيير ترتيب كلمات الجملة؟",
+      explanation: [
+        "في توكي بونا، لا نغير ترتيب الجملة عند السؤال! ضع كلمة 'seme' (ماذا/مَن/أي) في نفس موضع الإجابة.",
+        "وللنفي، ضع كلمة 'ala' بعد الكلمة المراد نفيها مباشرة. ولسؤال نعم/لا: كرر الكلمة مع ala (مثل: pona ala pona?)."
+      ],
+      formula: "[فعل / صفة] + <span class=\"highlight-pink\">ala</span> (نفي)<br>[جملة مع وضع <span class=\"highlight-pink\">seme</span> مكان المجهول]<br>[فعل] + <span class=\"highlight-pink\">ala</span> + [نفس الفعل]؟",
+      formulaExplanation: "ala تنفي الكلمة السابقة، seme تسأل عن المجهول، و [فعل ala فعل] لسؤال نعم/لا.",
+      examples: [
+        { tp: "mi sona ala", ar: "أنا لا أعلم (نفي بعد الفعل)", hint: "sona + ala تفيد النفي" },
+        { tp: "nimi sina li seme?", ar: "ما اسمك؟ (حرفياً: اسمك ماذا؟)", hint: "seme في موضع الخبر" },
+        { tp: "sina wile e seme?", ar: "ماذا تريد؟", hint: "seme في موضع المفعول به بعد e" },
+        { tp: "sina ken ala ken?", ar: "هل تستطيع أم لا؟", hint: "سؤال نعم/لا بتكرار ken" }
+      ],
+      warning: "لا تقلب الفاعل مع الفعل أبداً عند السؤال كما في الإنجليزية؛ الترتيب يبقى ثابتاً دائماً!",
+      quickTip: "ضع 'seme' مكان الكلمة المجهولة وكأنك تملأ الفراغ في جملة عادية!"
+    },
+    {
+      id: "rule_pi",
+      unitId: 6,
+      title: "القاعدة 6: أداة التجميع الوصفي pi",
+      subtitle: "أقواس التجميع الرياضية لربط الأوصاف المركبة",
+      explanation: [
+        "أداة 'pi' تعمل كأقواس رياضية تجمع صفتين أو وصفيْن معاً ليعدلا الاسم السابق كوحدة واحدة.",
+        "بدون 'pi'، كل صفة تعدل الكلمة السابقة لها مباشرة بالترتيب المتسلسل."
+      ],
+      formula: "[اسم] + <span class=\"highlight-pink\">pi</span> + [صفة 1] + [صفة 2]",
+      formulaExplanation: "تجمع pi الصفتين التاليتين معاً لتصبحا وصفاً للموصوف السابق.",
+      examples: [
+        { tp: "tomo pi jan pona", ar: "بيت الصديق الصالح (بيت خاص بشخص طيب)", hint: "pi تجمع jan pona كمالك للبيت" },
+        { tp: "ilo pi sitelen pona", ar: "أداة كتابة توكي بونا (قلم الرموز)", hint: "pi تجمع sitelen pona" },
+        { tp: "kulupu pi toki pona", ar: "مجتمع لغة توكي بونا", hint: "pi تجمع toki pona" },
+        { tp: "jan pi ma tomo", ar: "شخص المدينة (ابن المدينة)", hint: "ma tomo = مدينة" }
+      ],
+      warning: "خطأ شائع جداً: لا تستخدم 'pi' قبل كلمة واحدة فقط! لا تقل 'tomo pi mi' بل قل ببساطة 'tomo mi'.",
+      quickTip: "تذكر: 'pi' تحتاج بعدها كلمتين على الأقل، وهي بمثابة فتح قوسين ( ) لتجميع المعنى."
+    },
+    {
+      id: "rule_la",
+      unitId: 7,
+      title: "القاعدة 7: أداة السياق والشرط والزمن la",
+      subtitle: "بناء الجمل المركبة: إذا كان كذا... يحدث كذا",
+      explanation: [
+        "أداة 'la' تربط بين سياق الكلام (ظرف زمان، ظرف مكان، أو جملة شرطية) وبين الحدث الرئيسي الناتج.",
+        "التركيب دائماً: [السياق / الزمان / الشرط] la [الجملة الرئيسية]."
+      ],
+      formula: "[سياق / زمان / شرط] + <span class=\"highlight-pink\">la</span> + [الحدث الرئيسي]",
+      formulaExplanation: "تفصل la بين المقدمة الظرفية أو الشرطية والنتيجة.",
+      examples: [
+        { tp: "tenpo ni la mi moku", ar: "في هذا الوقت (الآن)، أنا آكل", hint: "tenpo ni (الآن) + la" },
+        { tp: "tenpo pimeja la mi lape", ar: "في وقت الليل، أنا أنام", hint: "tenpo pimeja (الليل) + la" },
+        { tp: "sina wile la mi pali", ar: "إذا أردتَ ذلك، سأعمل", hint: "sina wile (إذا رغبت) + la" }
+      ],
+      warning: "لا تغير ترتيب العبارة؛ ضع ظرف الزمان أو الشرط أولاً متبوعاً بـ 'la' ثم الجملة الرئيسية.",
+      quickTip: "تذكر: 'la' تعني (في سياق...) أو (إذا كان الأمر كذا... فإن)."
+    },
+    {
+      id: "rule_o",
+      unitId: 8,
+      title: "القاعدة 8: أداة النداء والأمر والتمني o",
+      subtitle: "المنادى، صيغ الأمر المباشر، والدعاء",
+      explanation: [
+        "تُستخدم 'o' في 3 مواضع: بعد المنادى (jan o! = يا فلان)، وفي بداية جملة الأمر المباشر (o moku! = كُلْ!)، وللتمني والدعاء (o pona! = كن بخير!).",
+        "في جملة الأمر، تحل 'o' محل الفاعل وأداة li معاً."
+      ],
+      formula: "[المنادى] + <span class=\"highlight-pink\">o</span>!<br><span class=\"highlight-pink\">o</span> + [فعل]! (أمر مباشر)",
+      formulaExplanation: "o بعد الاسم للنداء، و o في البداية للأمر المباشر.",
+      examples: [
+        { tp: "jan pona o!", ar: "يا صديقي العزيز!", hint: "o بعد الاسم تفيد النداء" },
+        { tp: "o moku!", ar: "تناول طعامك! / كُلْ!", hint: "o في بداية الجملة تفيد الأمر" },
+        { tp: "o lape pona!", ar: "نوماً هنيئاً!", hint: "أمر وتمنٍّ طيب" },
+        { tp: "mama o, toki!", ar: "يا والدي، مرحباً!", hint: "نداء وتحية" }
+      ],
+      warning: "في جمل الأمر المباشر لا تذكر الفاعل؛ قل 'o moku' وليس 'sina o moku' إلا إذا أردت التأكيد والنداء معاً.",
+      quickTip: "تذكر: 'o' هي نداء الحبيب وأمر الصديق وتمني الخير!"
+    },
+    {
+      id: "rule_conjunctions_numbers",
+      unitId: 9,
+      title: "القاعدة 9: أدوات العطف والتخيير ونظام الأرقام",
+      subtitle: "en بين الفاعلين، anu للتخيير، ونظام العد البسيط",
+      explanation: [
+        "أداة 'en' تُستخدم حصراً للجمع بين فاعلين في بداية الجملة (mi en ona li jan).",
+        "وأداة 'anu' تفيد التخيير (ماء أم فاكهة؟). وأرقام توكي بونا تعتمد على البساطة: wan (1)، tu (2)، mute (كثير)، ale (100 أو الكل)، و nanpa للترتيب."
+      ],
+      formula: "[فاعل 1] + <span class=\"highlight-pink\">en</span> + [فاعل 2] + li...<br>[خيار 1] + <span class=\"highlight-pink\">anu</span> + [خيار 2]<br>nanpa + [رقم] (للترتيب)",
+      formulaExplanation: "en تجمع بين الفاعلين، anu للتخيير، و nanpa للرقم الترتيبي.",
+      examples: [
+        { tp: "mi en ona li jan", ar: "أنا وهو إنسانان", hint: "en تربط بين فاعلين" },
+        { tp: "telo anu kili?", ar: "ماء أم فاكهة؟", hint: "anu تفيد الاختيار" },
+        { tp: "jan wan li lon", ar: "شخص واحد موجود", hint: "wan تفيد العدد واحد" },
+        { tp: "soweli tu", ar: "حيوانان اثنان", hint: "tu تفيد العدد اثنين" },
+        { tp: "nanpa wan", ar: "المركز الأول / رقم واحد", hint: "nanpa تحول الرقم إلى ترتيبي" }
+      ],
+      warning: "لا تستخدم 'en' للربط بين فعلين أو جملتين؛ en مخصصة حصراً للربط بين الفاعلين!",
+      quickTip: "توكي بونا تفضل البساطة: ركّز على المعنى (قليل، كثير، كل) بدلاً من الحساب المعقد!"
+    },
+    {
+      id: "rule_ku_suli",
+      unitId: 10,
+      title: "القاعدة 10: كلمات معجم ku suli والتعابير المتقدمة",
+      subtitle: "الكلمات المعتمدة بعد pu وتراكيب الكلام البليغ",
+      explanation: [
+        "معجم Toki Pona Dictionary (ku) أضاف 17 كلمة شائعة اعتمدتها Sonja Lang رسمياً (ku suli) مثل epiku و jasima و tonsi و misikeke.",
+        "هذه الكلمات تثري لغة الحوار وتسمح بالتعبير عن مفاهيم عصرية ودقيقة مع الحفاظ على روح البساطة."
+      ],
+      formula: "استخدام كلمات ku suli المعتمدة في تراكيب الجمل الأصلية مع li و e و pi",
+      formulaExplanation: "تتبع كلمات ku نفس القواعد النحوية تماماً كباقي كلمات pu.",
+      examples: [
+        { tp: "lipu pu li pona", ar: "كتاب بونا الرسمي رائع", hint: "pu = الكتاب الرسمي لتوكي بونا" },
+        { tp: "lipu ku li suli", ar: "معجم بونا الموسع شامل ومفيد", hint: "ku = معجم توكي بونا" },
+        { tp: "ni li epiku a!", ar: "هذا ملحمي ورائع حقاً!", hint: "epiku = ملحمي / فخم" },
+        { tp: "jasima li lukin", ar: "المرآة تعكس النور والمظهر", hint: "jasima = مرآة / انعكاس" },
+        { tp: "o kipisi e pan", ar: "اقطع الخبز!", hint: "kipisi = يقطع / تقسيم" },
+        { tp: "kijetesantakalu li suwi", ar: "حيوان الراكون ظريف ومحبوب", hint: "kijetesantakalu = فصيلة الراكونيات" }
+      ],
+      warning: "كلمات ku مكملة وممتعة؛ لكن قوة توكي بونا الحقيقية تكمن في قدرتك على التعبير بالكلمات البسيطة الأصلية!",
+      quickTip: "استمتع بكلمات ku واعتبرها أوسمة إتقان لغوي متقدم في ختام رحلتك!"
+    }
+  ],
+
+  // 10 Progressive Units Definition with Pedagogical Progression & 137 Words
   units: [
     {
       id: 1,
-      title: "الوحدة 1: الأساسيات والضمائر",
-      subtitle: "الضمائر، التحية، وحكم البساطة والخير",
-      description: "مدخلك إلى عالم لغة توكي بونا: تعلم الضمائر الأساسية والتحيات ومفاهيم الجودة البسيطة.",
+      title: "الوحدة 1: الأساسيات والجملة البسيطة",
+      subtitle: "الضمائر، التحيات، والجملة بدون li",
+      description: "انطلاقتك الأولى في توكي بونا: تعلم الضميرين mi و sina، وترتيب الصفة بعد الموصوف، والجمل البسيطة بدون أداة li.",
       color: "#B8FF29",
       icon: "🌱",
+      grammarRuleIds: ["rule_noun_adjective"],
       lessons: [
         {
           id: 1,
           unitId: 1,
-          title: "الدرس 1: الضمائر والشخص",
-          words: ["mi", "sina", "ona", "jan"],
-          xpReward: 20,
+          title: "الدرس 1: الضمائر الأساسية والكينونة",
+          words: ["mi", "sina", "jan", "pona"],
+          grammarIntroIds: ["rule_noun_adjective"],
+          xpReward: 25,
           sentences: [
             { tp: "mi jan", ar: "أنا إنسان" },
-            { tp: "sina jan", ar: "أنت إنسان" },
-            { tp: "ona li jan", ar: "هو إنسان" },
-            { tp: "jan li pona", ar: "الشخص طيب" }
+            { tp: "sina pona", ar: "أنت طيب ورائع" },
+            { tp: "jan pona", ar: "شخص طيب (صديق)" },
+            { tp: "mi pona", ar: "أنا بخير" }
           ]
         },
         {
           id: 2,
           unitId: 1,
-          title: "الدرس 2: التحية والأحكام",
-          words: ["toki", "pona", "ike", "ni"],
+          title: "الدرس 2: التحية والأحكام والغذاء",
+          words: ["toki", "ike", "ni", "moku"],
           xpReward: 25,
           sentences: [
             { tp: "toki!", ar: "مرحباً!" },
-            { tp: "ni li pona", ar: "هذا جيد" },
-            { tp: "ni li ike", ar: "هذا سيء" },
-            { tp: "toki pona", ar: "لغة توكي بونا (الكلام الطيب)" }
+            { tp: "toki pona", ar: "لغة توكي بونا (الكلام الطيب)" },
+            { tp: "mi moku", ar: "أنا آكل" },
+            { tp: "sina ike", ar: "أنت سيء أو مؤذٍ" }
           ]
         },
         {
           id: 3,
           unitId: 1,
-          title: "الدرس 3: الكينونة والأسماء",
-          words: ["ijo", "nimi", "ken", "ante"],
+          title: "الدرس 3: الوصف والكيان والمأوى والماء",
+          words: ["suli", "lili", "tomo", "telo"],
           xpReward: 25,
           sentences: [
-            { tp: "ijo ni li pona", ar: "هذا الشيء مفيد" },
-            { tp: "nimi mi li jan", ar: "اسمي إنسان" },
-            { tp: "mi ken toki", ar: "أنا أستطيع التحدث" },
-            { tp: "ona li ante", ar: "هو مختلف" }
+            { tp: "tomo suli", ar: "بيت كبير" },
+            { tp: "telo lili", ar: "ماء قليل" },
+            { tp: "mi suli", ar: "أنا كبير أو بالغ" },
+            { tp: "sina lili", ar: "أنت صغير" }
           ]
         }
       ]
     },
     {
       id: 2,
-      title: "الوحدة 2: القواعد والأفعال الأولى",
-      subtitle: "قواعد الربط (li و e) وأفعال الحياة اليومية",
-      description: "تعلم أسرار تركيب الجملة في توكي بونا مع أهم أدوات القواعد وأفعال الأكل والحركة والرغبة.",
+      title: "الوحدة 2: الضمير الغائب وأداة الربط li",
+      subtitle: "استخدام li مع ona والأسماء الصريحة",
+      description: "القاعدة الذهبية في توكي بونا: متى نضع أداة الربط li بعد الفاعل لفصله عن الفعل أو الوصف.",
       color: "#00F0FF",
       icon: "⚡",
+      grammarRuleIds: ["rule_li"],
       lessons: [
         {
           id: 1,
           unitId: 2,
-          title: "الدرس 1: أدوات الربط والأكل والحركة",
-          words: ["li", "e", "moku", "tawa"],
+          title: "الدرس 1: أداة الربط والضمير الغائب والطبيعة",
+          words: ["li", "ona", "kasi", "suno"],
+          grammarIntroIds: ["rule_li"],
           xpReward: 25,
           sentences: [
-            { tp: "mi moku", ar: "أنا آكل" },
-            { tp: "sina tawa tomo", ar: "أنت ذاهب إلى البيت" },
-            { tp: "ona li moku", ar: "هو يأكل" },
-            { tp: "jan li tawa", ar: "الشخص يتحرك" }
+            { tp: "ona li jan", ar: "هو إنسان" },
+            { tp: "suno li suli", ar: "الشمس عظيمة ومشرقة" },
+            { tp: "kasi li pona", ar: "النبات مزهر وجميل" },
+            { tp: "ona li pona", ar: "هو شخص طيب" }
           ]
         },
         {
           id: 2,
           unitId: 2,
-          title: "الدرس 2: الرغبة والوجود والوسيلة",
-          words: ["kama", "wile", "lon", "kepeken"],
+          title: "الدرس 2: الكائنات والحيوانات",
+          words: ["soweli", "waso", "kala", "pipi"],
           xpReward: 25,
           sentences: [
-            { tp: "mi wile moku", ar: "أريد أن آكل" },
-            { tp: "ona li lon ni", ar: "هو موجود هنا" },
-            { tp: "jan li kama", ar: "الشخص قادم" },
-            { tp: "mi kepeken ilo", ar: "أنا أستخدم أداة" }
+            { tp: "soweli li pona", ar: "الحيوان لطيف" },
+            { tp: "waso li suli", ar: "الطائر كبير" },
+            { tp: "kala li lili", ar: "السمكة صغيرة" },
+            { tp: "pipi li ike", ar: "الحشرة مزعجة" }
           ]
         },
         {
           id: 3,
           unitId: 2,
-          title: "الدرس 3: العمل والعطاء والدوام",
-          words: ["pali", "pana", "jo", "awen"],
+          title: "الدرس 3: الأفعال والحركة والاستقرار",
+          words: ["lape", "pali", "kama", "awen"],
           xpReward: 30,
           sentences: [
-            { tp: "mi pali e tomo", ar: "أنا أبني بيتاً" },
-            { tp: "o pana e moku", ar: "أعطني طعاماً!" },
-            { tp: "mi jo e ilo", ar: "لدي أداة" },
-            { tp: "o awen lon ni", ar: "ابقَ هنا!" }
+            { tp: "ona li lape", ar: "هو نائم" },
+            { tp: "jan li pali", ar: "الشخص يعمل" },
+            { tp: "soweli li kama", ar: "الحيوان قادم" },
+            { tp: "waso li awen", ar: "الطائر باقٍ ومستقر" }
           ]
         }
       ]
     },
     {
       id: 3,
-      title: "الوحدة 3: الطبيعة والكون",
-      subtitle: "الشمس، القمر، الماء، والنبات والعناصر",
-      description: "انطلق لاكتشاف مفردات الفلك والطبيعة وعناصر الأرض والرياح والنار والجليد.",
+      title: "الوحدة 3: الفعل المتعدي وأداة المفعول به e",
+      subtitle: "تحديد المفعول به المباشر في الجملة",
+      description: "تعلم كيفية توجيه الفعل نحو المفعول به باستخدام الأداة النحوية e وأفعال التملك والعطاء والحواس.",
       color: "#FFE600",
-      icon: "☀️",
+      icon: "🎯",
+      grammarRuleIds: ["rule_e"],
       lessons: [
         {
           id: 1,
           unitId: 3,
-          title: "الدرس 1: أجرام السماء والماء",
-          words: ["suno", "mun", "telo", "kasi"],
+          title: "الدرس 1: أداة المفعول به والغذاء والتملك",
+          words: ["e", "kili", "pan", "jo"],
+          grammarIntroIds: ["rule_e"],
           xpReward: 25,
           sentences: [
-            { tp: "suno li suli", ar: "الشمس عظيمة وساطعة" },
-            { tp: "mun li lon sewi", ar: "القمر في السماء" },
-            { tp: "mi wile e telo", ar: "أريد ماءً" },
-            { tp: "kasi li pona", ar: "النبات جميل ومزهر" }
+            { tp: "mi moku e kili", ar: "أنا آكل الفاكهة" },
+            { tp: "ona li jo e pan", ar: "هو يملك خبزاً" },
+            { tp: "jan li moku e pan", ar: "الشخص يتناول الخبز" },
+            { tp: "mi jo e kili", ar: "لدي فواكه" }
           ]
         },
         {
           id: 2,
           unitId: 3,
-          title: "الدرس 2: الأرض والجو والرياح",
-          words: ["ma", "sewi", "kon", "ko"],
+          title: "الدرس 2: الرغبة والعطاء والأدوات والأوعية",
+          words: ["pana", "wile", "ilo", "poki"],
           xpReward: 25,
           sentences: [
-            { tp: "ma mi li suli", ar: "بلادي كبيرة وواسعة" },
-            { tp: "sewi li laso", ar: "السماء زرقاء صافية" },
-            { tp: "kon li lete", ar: "الهواء بارد" },
-            { tp: "ko li lon ma", ar: "الطين على الأرض" }
+            { tp: "mi wile e telo", ar: "أريد ماءً" },
+            { tp: "ona li pana e moku", ar: "هو يقدم الطعام" },
+            { tp: "jan li jo e ilo", ar: "الشخص يملك أداة" },
+            { tp: "mi wile e poki", ar: "أحتاج إلى وعاء أو كوب" }
           ]
         },
         {
           id: 3,
           unitId: 3,
-          title: "الدرس 3: العناصر والمناخ",
-          words: ["kiwen", "seli", "lete", "anpa"],
+          title: "الدرس 3: الرؤية والسمع والوثائق والصيد",
+          words: ["lukin", "kute", "lipu", "alasa", "moli"],
           xpReward: 30,
           sentences: [
-            { tp: "kiwen li suli", ar: "الصخرة ضخمة" },
-            { tp: "seli li suli", ar: "النار قوية وساخنة" },
-            { tp: "telo li lete", ar: "الماء بارد" },
-            { tp: "ona li lon anpa", ar: "هو في الأسفل" }
+            { tp: "mi lukin e lipu", ar: "أنا أقرأ كتاباً أو وثيقة" },
+            { tp: "ona li kute e toki", ar: "هو يستمع إلى الحديث" },
+            { tp: "soweli li alasa e kala", ar: "الحيوان يصطاد السمك" },
+            { tp: "ilo li moli e pipi", ar: "الأداة تقضي على الحشرة" }
           ]
         }
       ]
     },
     {
       id: 4,
-      title: "الوحدة 4: الحيوانات والكائنات",
-      subtitle: "حيوانات البر والبحر والجو وفصيلة الراكون",
-      description: "تعرف على الحيوانات والطيور والأسماك والغذاء النباتي وكلمة الراكون الشهيرة.",
+      title: "الوحدة 4: حروف الجر والمكان",
+      subtitle: "الوجود والحركة والأدوات بدون أداة e",
+      description: "استخدام حروف الجر الخمسة (lon، tawa، tan، kepeken، sama) للتعبير عن المكان والزمان والاتجاه والوسيلة.",
       color: "#FF4FA3",
-      icon: "🐾",
+      icon: "🧭",
+      grammarRuleIds: ["rule_prepositions"],
       lessons: [
         {
           id: 1,
           unitId: 4,
-          title: "الدرس 1: الثدييات والطيور والأسماك",
-          words: ["soweli", "waso", "kala", "pipi"],
+          title: "الدرس 1: الوجود والحركة والأصل والأدوات",
+          words: ["lon", "tawa", "tan", "kepeken"],
+          grammarIntroIds: ["rule_prepositions"],
           xpReward: 25,
           sentences: [
-            { tp: "soweli li moku e kasi", ar: "الحيوان يأكل النبات" },
-            { tp: "waso li tawa sewi", ar: "الطائر يطير في السماء" },
-            { tp: "kala li lon telo", ar: "السمكة في الماء" },
-            { tp: "pipi li lili", ar: "الحشرة صغيرة" }
+            { tp: "mi lon tomo", ar: "أنا في البيت" },
+            { tp: "ona li tawa ma", ar: "هو يذهب إلى الريف أو الأرض" },
+            { tp: "mi kama tan ma suli", ar: "أنا قادم من بلد كبير" },
+            { tp: "mi kepeken ilo", ar: "أنا أستخدم أداة" }
           ]
         },
         {
           id: 2,
           unitId: 4,
-          title: "الدرس 2: الزواحف والمخلوق الشهير",
-          words: ["akesi", "mu", "kijetesantakalu"],
-          xpReward: 30,
+          title: "الدرس 2: التشبيه والأرض والسماء والأعماق",
+          words: ["sama", "ma", "sewi", "anpa"],
+          xpReward: 25,
           sentences: [
-            { tp: "soweli li mu", ar: "الحيوان يُصدر صوته" },
-            { tp: "kijetesantakalu li suwi", ar: "حيوان الراكون لطيف وظريف" },
-            { tp: "akesi li suli", ar: "التمساح أو الزاحف ضخم" }
+            { tp: "ona li sama mi", ar: "هو يشبهني تماماً" },
+            { tp: "mun li lon sewi", ar: "القمر في السماء العليا" },
+            { tp: "soweli li lon anpa", ar: "الحيوان في الأسفل" },
+            { tp: "ma mi li suli", ar: "بلادنا واسعة" }
           ]
         },
         {
           id: 3,
           unitId: 4,
-          title: "الدرس 3: ثمار الغذاء والحياة",
-          words: ["kili", "pan", "moli", "alasa"],
+          title: "الدرس 3: التموضع المكاني والجهات والبعد",
+          words: ["insa", "monsi", "sinpin", "poka", "weka"],
           xpReward: 30,
           sentences: [
-            { tp: "mi moku e kili", ar: "أنا آكل الفاكهة" },
-            { tp: "pan li pona", ar: "الخبز لذيذ" },
-            { tp: "jan li alasa e kala", ar: "الشخص يصطاد السمك" },
-            { tp: "kasi li moli", ar: "النبات ذبل وفارق الحياة" }
+            { tp: "mi lon insa tomo", ar: "أنا في داخل البيت" },
+            { tp: "ona li lon monsi mi", ar: "هو خلفي" },
+            { tp: "jan li lon sinpin", ar: "الشخص في المقدمة أو أمامي" },
+            { tp: "tomo li weka", ar: "البيت بعيد" }
           ]
         }
       ]
     },
     {
       id: 5,
-      title: "الوحدة 5: الإنسان والجسد والحواس",
-      subtitle: "العائلة، أعضاء الجسم، والحواس الخمس",
-      description: "استكشف مفردات الأسرة وأجزاء البدن وحواس السمع والنظر والكلام.",
+      title: "الوحدة 5: النفي وأدوات الاستفهام",
+      subtitle: "طرح الأسئلة والنفي بـ ala و seme وصيغة X ala X",
+      description: "أسرار الاستفهام والنفي في توكي بونا: لا تغيير في ترتيب الجملة، مع التعبير عن المشاعر والتفكير.",
       color: "#B8FF29",
-      icon: "👤",
+      icon: "❓",
+      grammarRuleIds: ["rule_negation_question"],
       lessons: [
         {
           id: 1,
           unitId: 5,
-          title: "الدرس 1: العائلة والنوع",
-          words: ["mama", "meli", "mije", "unpa"],
+          title: "الدرس 1: أدوات النفي والاستفهام والعلم والقدرة",
+          words: ["ala", "seme", "sona", "ken"],
+          grammarIntroIds: ["rule_negation_question"],
           xpReward: 25,
           sentences: [
-            { tp: "mama li pona", ar: "الوالدان طيبان" },
-            { tp: "jan meli li toki", ar: "المرأة تتحدث" },
-            { tp: "jan mije li pali", ar: "الرجل يعمل" },
-            { tp: "mama li olin e mi", ar: "والداي يحبانني" }
+            { tp: "mi sona ala", ar: "أنا لا أعلم" },
+            { tp: "nimi sina li seme?", ar: "ما اسمك؟" },
+            { tp: "sina ken ala ken?", ar: "هل تستطيع أم لا؟" },
+            { tp: "sina wile e seme?", ar: "ماذا تريد؟" }
           ]
         },
         {
           id: 2,
           unitId: 5,
-          title: "الدرس 2: أطراف الجسد",
-          words: ["sijelo", "luka", "noka", "lawa"],
+          title: "الدرس 2: المشاعر والحب والتسلية والاختلاف",
+          words: ["pilin", "olin", "musi", "ante"],
           xpReward: 25,
           sentences: [
-            { tp: "sijelo mi li pona", ar: "صحتي وجسدي بخير" },
-            { tp: "luka li pali", ar: "اليد تصنع وتعمل" },
-            { tp: "noka li tawa", ar: "الأقدام تمشي" },
-            { tp: "jan lawa li sona", ar: "القائد يتمتع بالحكمة" }
+            { tp: "pilin mi li pona", ar: "أنا مرتاح وسعيد" },
+            { tp: "mi olin e sina", ar: "أنا أحبك" },
+            { tp: "ni li musi mute", ar: "هذا مسلٍ جداً" },
+            { tp: "ijo ni li ante", ar: "هذا الشيء مختلف" }
           ]
         },
         {
           id: 3,
           unitId: 5,
-          title: "الدرس 3: الفم والوجه والحواس",
-          words: ["uta", "oko", "lukin", "kute", "kalama"],
+          title: "الدرس 3: الصراع والتعطل والخوف والغرابة",
+          words: ["pakala", "utala", "monsuta", "nasa", "jaki"],
           xpReward: 30,
           sentences: [
-            { tp: "oko li lukin", ar: "العين تبصر وترى" },
-            { tp: "uta li moku", ar: "الفم يأكل ويتذوق" },
-            { tp: "kute e kalama", ar: "استمع إلى الصوت والموسيقى" },
-            { tp: "mi lukin e lipu", ar: "أنا أقرأ كتاباً" }
+            { tp: "ilo li pakala", ar: "الأداة تعطلت" },
+            { tp: "utala li ike", ar: "الحرب والقتال سيء" },
+            { tp: "soweli monsuta", ar: "حيوان مرعب ومخيف" },
+            { tp: "telo jaki", ar: "ماء ملوث أو متسخ" }
           ]
         }
       ]
     },
     {
       id: 6,
-      title: "الوحدة 6: الأدوات والأماكن",
-      subtitle: "المنزل، الأوعية، الأجهزة، والمجتمع",
-      description: "كل ما يحيط بك من مبانٍ وأدوات عمل وأوانٍ وثياب وأسواق.",
+      title: "الوحدة 6: أداة التجميع pi",
+      subtitle: "تجميع الأوصاف المتعددة كأقواس رياضية",
+      description: "إتقان استخدام أداة pi لتجميع كلمتين وصفيّتين فأكثر لتعديل الاسم السابق، مع مفردات المجتمع والأدوات.",
       color: "#00F0FF",
-      icon: "🏡",
+      icon: "🔗",
+      grammarRuleIds: ["rule_pi"],
       lessons: [
         {
           id: 1,
           unitId: 6,
-          title: "الدرس 1: الأجهزة والمأوى والأوعية",
-          words: ["ilo", "tomo", "lipu", "poki"],
+          title: "الدرس 1: أداة التجميع والمجتمع والمنهج والأصوات",
+          words: ["pi", "kulupu", "nasin", "kalama"],
+          grammarIntroIds: ["rule_pi"],
           xpReward: 25,
           sentences: [
-            { tp: "ilo li pali", ar: "الآلة تعمل" },
-            { tp: "tomo mi li suli", ar: "بيتي كبير" },
-            { tp: "lipu li lon supa", ar: "الكتاب على الطاولة" },
-            { tp: "poki li jo e telo", ar: "الكوب يحتوي ماءً" }
+            { tp: "tomo pi jan pona", ar: "بيت الصديق" },
+            { tp: "kulupu pi toki pona", ar: "مجتمع لغة توكي بونا" },
+            { tp: "nasin pi jan pona", ar: "منهج الشخص الصالح" },
+            { tp: "kalama pi toki pona", ar: "أصوات لغة توكي بونا" }
           ]
         },
         {
           id: 2,
           unitId: 6,
-          title: "الدرس 2: الأثاث واللباس والمنافذ",
+          title: "الدرس 2: الأثاث والمنافذ واللباس والعصي",
           words: ["supa", "lupa", "len", "palisa"],
           xpReward: 25,
           sentences: [
-            { tp: "mi lape lon supa", ar: "أنا أنام على السرير" },
-            { tp: "o open e lupa", ar: "افتح الباب أو النافذة!" },
-            { tp: "len mi li laso", ar: "ثوبي لونه أزرق" },
-            { tp: "palisa li suli", ar: "العصا طويلة" }
+            { tp: "lipu li lon supa", ar: "الكتاب على الطاولة" },
+            { tp: "o open e lupa", ar: "افتح الباب أو النافذة" },
+            { tp: "len mi li pona", ar: "ثوبي نظيف وجميل" },
+            { tp: "palisa suli", ar: "عصا طويلة أو فرع كبير" }
           ]
         },
         {
           id: 3,
           unitId: 6,
-          title: "الدرس 3: التجارة والطرق والمجتمع",
-          words: ["esun", "mani", "nasin", "kulupu", "sitelen"],
+          title: "الدرس 3: التجارة والمال والفم والرموز",
+          words: ["esun", "mani", "uta", "ijo", "sitelen"],
           xpReward: 30,
           sentences: [
+            { tp: "ilo pi sitelen pona", ar: "أداة كتابة توكي بونا (قلم الرموز)" },
             { tp: "mi tawa esun", ar: "أنا ذاهب إلى السوق" },
             { tp: "ona li jo e mani", ar: "هو يملك المال" },
-            { tp: "nasin ni li pona", ar: "هذا الطريق والمنهج طيب" },
-            { tp: "kulupu li toki", ar: "المجتمع والفريق يتحاورون" },
-            { tp: "mi sitelen e pona", ar: "أنا أرسم رمز الخير" }
+            { tp: "uta li toki", ar: "الفم يتكلم" }
           ]
         }
       ]
     },
     {
       id: 7,
-      title: "الوحدة 7: الصفات والألوان والأرقام",
-      subtitle: "الأحجام، الأعداد، وعالم الألوان البهيج",
-      description: "تعلم وصف الأشياء بأحجامها، نظام العد في توكي بونا، والألوان الطبيعية.",
+      title: "الوحدة 7: السياق والشرط والزمن la",
+      subtitle: "الجمل المركبة وظروف الزمان والشرط",
+      description: "بناء الجمل المتقدمة باستخدام أداة la لربط الزمان والشرط بالنتيجة، مع مفردات الزمن والطبيعة.",
       color: "#FFE600",
-      icon: "🎨",
+      icon: "⏳",
+      grammarRuleIds: ["rule_la"],
       lessons: [
         {
           id: 1,
           unitId: 7,
-          title: "الدرس 1: الحجم والوفرة",
-          words: ["suli", "lili", "sin", "mute"],
+          title: "الدرس 1: أداة السياق والزمن والدورات والقمر",
+          words: ["la", "tenpo", "sike", "mun"],
+          grammarIntroIds: ["rule_la"],
           xpReward: 25,
           sentences: [
-            { tp: "tomo suli", ar: "بيت كبير" },
-            { tp: "jan lili li musi", ar: "الطفل يلعب ويمرح" },
-            { tp: "ilo sin", ar: "جهاز جديد" },
-            { tp: "kili mute", ar: "فواكه كثيرة" }
+            { tp: "tenpo ni la mi moku", ar: "في هذا الوقت، أنا آكل" },
+            { tp: "tenpo pimeja la mi lape", ar: "في الليل، أنا أنام" },
+            { tp: "sike suno li suli", ar: "دورة الشمس سنوية وعظيمة" },
+            { tp: "mun li suno", ar: "القمر يضيء ليلاً" }
           ]
         },
         {
           id: 2,
           unitId: 7,
-          title: "الدرس 2: الأعداد والقوة",
-          words: ["wan", "tu", "nanpa", "wawa"],
+          title: "الدرس 2: البدايات والنهايات والمرتفعات والصخور",
+          words: ["open", "pini", "nena", "kiwen"],
           xpReward: 25,
           sentences: [
-            { tp: "jan wan", ar: "شخص واحد" },
-            { tp: "soweli tu", ar: "حيوانان اثنان" },
-            { tp: "nanpa wan", ar: "المركز الأول" },
-            { tp: "soweli wawa", ar: "حيوان قوي ومقتدر" }
+            { tp: "tenpo pali li open", ar: "بدأ وقت العمل" },
+            { tp: "tenpo pali li pini", ar: "انتهى وقت العمل" },
+            { tp: "nena ma li suli", ar: "الجبل والتل مرتفع" },
+            { tp: "kiwen li wawa", ar: "الصخرة صلبة وقوية" }
           ]
         },
         {
           id: 3,
           unitId: 7,
-          title: "الدرس 3: الأبيض والأسود والحلاوة",
-          words: ["kule", "walo", "pimeja", "suwi"],
-          xpReward: 25,
-          sentences: [
-            { tp: "kule li pona", ar: "اللون جميل" },
-            { tp: "lipu walo", ar: "صفحة بيضاء" },
-            { tp: "tenpo pimeja", ar: "وقت الظلام والليل" },
-            { tp: "kili suwi", ar: "فاكهة حلوة" }
-          ]
-        },
-        {
-          id: 4,
-          unitId: 7,
-          title: "الدرس 4: الألوان الأساسية",
-          words: ["loje", "jelo", "laso"],
+          title: "الدرس 3: العناصر والمناخ والحرارة والأسماء",
+          words: ["seli", "lete", "kon", "ko", "nimi"],
           xpReward: 30,
           sentences: [
-            { tp: "kili loje", ar: "ثمرة حمراء" },
-            { tp: "suno jelo", ar: "شمس صفراء مشرقة" },
-            { tp: "telo laso", ar: "ماء أزرق / بحر صافٍ" }
+            { tp: "sina wile la mi pali", ar: "إذا أردتَ، سأعمل" },
+            { tp: "seli li suli", ar: "النار قوية وساخنة" },
+            { tp: "kon li lete", ar: "الهواء والرياح باردة" },
+            { tp: "nimi sina li pona", ar: "اسمك جميل وطيب" }
           ]
         }
       ]
     },
     {
       id: 8,
-      title: "الوحدة 8: المشاعر والحواس والعقل",
-      subtitle: "الحب، العلم، النوم، والمخاوف والأحاسيس",
-      description: "عبر عن مشاعرك الداخلية، الحب العميق، المعرفة، النوم والراحة، والمخاوف.",
+      title: "الوحدة 8: النداء والأمر والتمني o",
+      subtitle: "المنادى، صيغ الأمر المباشر، والدعاء",
+      description: "كيف تنادي شخصاً (jan o!)، وتوجه أمراً مباشراً (o moku!)، أو تتمنى الخير، مع مفردات الجسد والأسرة.",
       color: "#FF4FA3",
-      icon: "💖",
+      icon: "📣",
+      grammarRuleIds: ["rule_o"],
       lessons: [
         {
           id: 1,
           unitId: 8,
-          title: "الدرس 1: القلب والمعرفة والمحبة",
-          words: ["pilin", "olin", "sona", "musi"],
+          title: "الدرس 1: أداة النداء والتعجب والأصوات والحلاوة",
+          words: ["o", "a", "mu", "suwi"],
+          grammarIntroIds: ["rule_o"],
           xpReward: 25,
           sentences: [
-            { tp: "pilin mi li pona", ar: "أشعر بالراحة والسعادة" },
-            { tp: "mi olin e sina", ar: "أنا أحبك" },
-            { tp: "ona li sona mute", ar: "هو يعلم الكثير ولديه حكمة" },
-            { tp: "ni li musi a!", ar: "هذا مسلٍ ومبهج حقاً!" }
+            { tp: "jan pona o!", ar: "يا صديقي العزيز!" },
+            { tp: "o moku!", ar: "تناول طعامك! / كُلْ!" },
+            { tp: "o lape pona!", ar: "نوماً هنيئاً!" },
+            { tp: "kili suwi li pona a!", ar: "الفاكهة الحلوة لذيذة حقاً!" }
           ]
         },
         {
           id: 2,
           unitId: 8,
-          title: "الدرس 2: الراحة والاضطراب والصراع",
-          words: ["lape", "pakala", "utala", "monsuta"],
+          title: "الدرس 2: العائلة والنوع الإنساني",
+          words: ["mama", "meli", "mije", "unpa"],
           xpReward: 25,
           sentences: [
-            { tp: "o lape pona", ar: "نوماً هنيئاً" },
-            { tp: "ilo li pakala", ar: "الأداة تعطلت" },
-            { tp: "utala li ike", ar: "الحرب والقتال أمر سيء" },
-            { tp: "soweli monsuta", ar: "حيوان مرعب ومخيف" }
+            { tp: "mama o, toki!", ar: "يا والدي، مرحباً!" },
+            { tp: "jan meli li pona", ar: "المرأة صالحة وطيبة" },
+            { tp: "jan mije li pali", ar: "الرجل يعمل بجد" },
+            { tp: "mama li olin e mi", ar: "والداي يحبانني" }
           ]
         },
         {
           id: 3,
           unitId: 8,
-          title: "الدرس 3: الغرابة والأسطح الخارجية",
-          words: ["nasa", "jaki", "selo", "linja"],
+          title: "الدرس 3: الرأس وأطراف الجسد والعيون والجدة",
+          words: ["lawa", "sijelo", "luka", "noka", "oko", "sin"],
           xpReward: 30,
           sentences: [
-            { tp: "jan nasa", ar: "شخص غريب الأطوار" },
-            { tp: "telo jaki", ar: "ماء ملوث" },
-            { tp: "selo soweli", ar: "جلد الحيوان أو فراؤه" },
-            { tp: "linja lawa", ar: "شعر الرأس" }
+            { tp: "o lukin kepeken oko", ar: "انظر بالعينين!" },
+            { tp: "luka mi li pali", ar: "يدي تصنع وتعمل" },
+            { tp: "noka li tawa", ar: "الأقدام تمشي وتسير" },
+            { tp: "ilo sin li pona", ar: "الأداة الجديدة ممتازة" }
           ]
         }
       ]
     },
     {
       id: 9,
-      title: "الوحدة 9: الزمن والاتجاهات والروابط",
-      subtitle: "سياق الكلام (la)، أدوات الاستفهام، والجهات",
-      description: "أتقن بناء الجمل المركبة بالشرط والسياق، والاتجاهات والمواقع المكانية والزمنية.",
+      title: "الوحدة 9: التعدد والروابط والأرقام",
+      subtitle: "أداة العطف en، التخيير anu، ونظام الأرقام والألوان",
+      description: "الربط بين الفاعلين باستخدام en، والخيارات باستخدام anu، ونظام الأعداد البسيط والألوان والصفات.",
       color: "#00F0FF",
-      icon: "🧭",
+      icon: "🔢",
+      grammarRuleIds: ["rule_conjunctions_numbers"],
       lessons: [
         {
           id: 1,
           unitId: 9,
-          title: "الدرس 1: روابط الجمل وأدوات السياق",
-          words: ["tenpo", "la", "pi", "en", "anu", "taso"],
+          title: "الدرس 1: الروابط وحروف العطف والتأكيد",
+          words: ["en", "anu", "taso", "kin"],
+          grammarIntroIds: ["rule_conjunctions_numbers"],
           xpReward: 25,
           sentences: [
-            { tp: "tenpo ni la mi moku", ar: "في هذا الوقت، أنا آكل" },
-            { tp: "tomo pi jan pona", ar: "بيت الصديق الصالح" },
             { tp: "mi en ona li jan", ar: "أنا وهو إنسانان" },
-            { tp: "telo anu kili?", ar: "ماء أم فاكهة؟" }
+            { tp: "telo anu kili?", ar: "ماء أم فاكهة؟" },
+            { tp: "mi wile e telo taso", ar: "أريد ماءً فقط" },
+            { tp: "mi kin li sona", ar: "أنا أيضاً أعلم ذلك" }
           ]
         },
         {
           id: 2,
           unitId: 9,
-          title: "الدرس 2: الاستفهام والنفي والكمال والنداء",
-          words: ["tan", "ala", "ale", "seme", "o", "a"],
+          title: "الدرس 2: نظام الأعداد والترتيب البسيط",
+          words: ["wan", "tu", "mute", "ale", "nanpa"],
           xpReward: 25,
           sentences: [
-            { tp: "sina tan seme?", ar: "من أين أنت؟" },
-            { tp: "mi sona ala", ar: "أنا لا أعرف" },
-            { tp: "jan ale li pona", ar: "كل الناس طيبون" },
-            { tp: "o toki e ni!", ar: "قل هذا الأمر!" }
+            { tp: "jan wan li lon", ar: "شخص واحد موجود" },
+            { tp: "soweli tu li lape", ar: "حيوانان اثنان نائمان" },
+            { tp: "kili mute li lon supa", ar: "فواكه كثيرة على الطاولة" },
+            { tp: "jan ale li pona", ar: "كل الناس طيبون" }
           ]
         },
         {
           id: 3,
           unitId: 9,
-          title: "الدرس 3: البدايات والنهايات والأشكال",
-          words: ["open", "pini", "sike", "nena"],
+          title: "الدرس 3: القوة والأبيض والأسود والظلال",
+          words: ["wawa", "kule", "walo", "pimeja"],
           xpReward: 25,
           sentences: [
-            { tp: "o open e lipu", ar: "افتح الكتاب وابدأ!" },
-            { tp: "tenpo pali li pini", ar: "وقت العمل قد انتهى" },
-            { tp: "sike suno li suli", ar: "دورة الشمس عظيمة" },
-            { tp: "nena ma li sewi", ar: "الجبل والتل مرتفع" }
+            { tp: "nanpa wan li wawa", ar: "صاحب المركز الأول قوي ومقتدر" },
+            { tp: "kule li pona", ar: "اللون مبهج وجميل" },
+            { tp: "lipu walo", ar: "ورقة بيضاء أو صفحة ناصعة" },
+            { tp: "tenpo pimeja", ar: "وقت الظلام والليل" }
           ]
         },
         {
           id: 4,
           unitId: 9,
-          title: "الدرس 4: التموضع المكاني والجهات",
-          words: ["insa", "monsi", "sinpin", "poka", "sama", "weka"],
+          title: "الدرس 4: الألوان الزاهية والجلد والأسطح",
+          words: ["loje", "jelo", "laso", "selo"],
           xpReward: 30,
           sentences: [
-            { tp: "mi lon insa tomo", ar: "أنا في داخل البيت" },
-            { tp: "ona li lon sinpin mi", ar: "هو موجود أمامي" },
-            { tp: "o awen lon poka mi", ar: "ابقَ بجانبي" },
-            { tp: "ona li sama mi", ar: "هو يشبهني تماماً" },
-            { tp: "ma tomo li weka", ar: "المدينة بعيدة" }
+            { tp: "kili loje li suwi", ar: "الثمرة الحمراء حلوة المذاق" },
+            { tp: "suno jelo", ar: "شمس صفراء مشرقة" },
+            { tp: "telo laso", ar: "ماء أزرق / بحر صافٍ" },
+            { tp: "selo soweli", ar: "جلد الحيوان أو فراؤه" }
           ]
         }
       ]
     },
     {
       id: 10,
-      title: "الوحدة 10: كلمات ku المتقدمة والتعابير",
-      subtitle: "الكلمات الخمس عشرة الرسمية المضافة (ku suli)",
-      description: "المستوى الختامي الأسطوري: تعلم كلمات معجم ku suli الرسمي المعتمدة من Sonja Lang.",
+      title: "الوحدة 10: كلمات ku suli والتعابير المتقدمة",
+      subtitle: "معجم ku الرسمي والمفردات المعتمدة الحديثة",
+      description: "المستوى الأسطوري الختامي: إتقان كافة الكلمات المضافة رسمياً بعد كتاب pu وتراكيب الكلام البليغ.",
       color: "#B8FF29",
-      icon: "🏆",
+      icon: "👑",
+      grammarRuleIds: ["rule_ku_suli"],
       lessons: [
         {
           id: 1,
           unitId: 10,
-          title: "الدرس 1: كتب بونا والروعة والمرايا",
+          title: "الدرس 1: كتب بونا والمعاجم والروعة والمرايا",
           words: ["pu", "ku", "epiku", "jasima"],
+          grammarIntroIds: ["rule_ku_suli"],
           xpReward: 30,
           sentences: [
-            { tp: "lipu pu li pona", ar: "كتاب بونا الرسمي رائع" },
-            { tp: "lipu ku li suli", ar: "معجم بونا الموسع ضخم ومفيد" },
-            { tp: "ni li epiku a!", ar: "هذا ملحمي وفخم حقاً!" },
-            { tp: "jasima li lukin", ar: "المرآة تعكس النور" }
+            { tp: "lipu pu li pona", ar: "كتاب بونا الرسمي رائع ومتقن" },
+            { tp: "lipu ku li suli", ar: "معجم بونا الموسع ku شامل ومفيد" },
+            { tp: "ni li epiku a!", ar: "هذا إنجاز ملحمي ورائع حقاً!" },
+            { tp: "jasima li lukin", ar: "المرآة تعكس النور والمظهر" }
           ]
         },
         {
           id: 2,
           unitId: 10,
-          title: "الدرس 2: التوكيد والقطع واللغة والاستيلاء",
-          words: ["kin", "kipisi", "kokosila", "lanpan"],
+          title: "الدرس 2: التقطيع واللغات والاستيلاء والمكعبات",
+          words: ["kipisi", "kokosila", "lanpan", "leko"],
           xpReward: 30,
           sentences: [
-            { tp: "mi kin li wile", ar: "أنا أيضاً أريد ذلك" },
             { tp: "o kipisi e pan", ar: "اقطع الخبز!" },
-            { tp: "o kokosila ala!", ar: "لا تتكلم بلغة أخرى هنا!" },
-            { tp: "ona li lanpan e ijo", ar: "هو استولى على الشيء" }
+            { tp: "o kokosila ala!", ar: "لا تتكلم بلغة أخرى داخل مجتمع بونا!" },
+            { tp: "ona li lanpan e ijo", ar: "هو استولى على الشيء وأخذه" },
+            { tp: "leko kiwen li lon supa", ar: "المكعب الحجري على الطاولة" }
           ]
         },
         {
           id: 3,
           unitId: 10,
-          title: "الدرس 3: المكعبات والاعتدال والطب",
-          words: ["leko", "meso", "misikeke", "n"],
+          title: "الدرس 3: الطب والاعتدال والتنوع والهمهمة",
+          words: ["misikeke", "meso", "tonsi", "n"],
           xpReward: 30,
           sentences: [
-            { tp: "leko kiwen li lon supa", ar: "المكعب الحجري على الطاولة" },
+            { tp: "o moku e misikeke", ar: "تناول الدواء والعلاج للشفاء" },
             { tp: "seli meso li pona", ar: "الدفء المعتدل مريح" },
-            { tp: "o moku e misikeke", ar: "تناول الدواء والعلاج" },
-            { tp: "n... toki ni li pona", ar: "ممم... هذا الكلام معقول" }
+            { tp: "jan tonsi li pona", ar: "الشخص المتنوع جندرياً طيب ومحترم" },
+            { tp: "n... mi sona", ar: "ممم... لقد فهمت وأدركت" }
           ]
         },
         {
           id: 4,
           unitId: 10,
-          title: "الدرس 4: التوابل والفطر والتنوع",
-          words: ["namako", "soko", "tonsi"],
+          title: "الدرس 4: الحيوانات الخاصة والفطر والتوابل والزواحف",
+          words: ["namako", "soko", "kijetesantakalu", "akesi", "linja"],
           xpReward: 35,
           sentences: [
-            { tp: "namako li pona e moku", ar: "البهارات تُحسن طعم الأكل" },
+            { tp: "namako li pona e moku", ar: "البهارات والتوابل تحسن الطعام" },
             { tp: "soko li lon kasi", ar: "الفطر ينمو قرب الشجرة" },
-            { tp: "jan tonsi li pona", ar: "الشخص المتنوع جندرياً طيب ومحترم" }
+            { tp: "kijetesantakalu li suwi", ar: "حيوان الراكون ظريف ومحبوب" },
+            { tp: "akesi li suli", ar: "التمساح أو الزاحف ضخم" },
+            { tp: "linja lawa", ar: "شعر الرأس والخيوط" }
           ]
         }
       ]
