@@ -1798,7 +1798,10 @@
       const syncBadge = document.getElementById('auth-sync-status-badge');
 
       if (this.currentUser) {
-        if (hudBtn) hudBtn.classList.add('logged-in');
+        if (hudBtn) {
+          hudBtn.classList.add('logged-in');
+          hudBtn.title = this.currentUser.email ? `مسجل كـ: ${this.currentUser.email}` : 'حسابي';
+        }
         if (hudIcon) hudIcon.innerHTML = UI_ICONS.user;
         if (hudLabel) {
           const userPrefix = this.currentUser.email ? this.currentUser.email.split('@')[0] : 'حسابي';
@@ -1817,9 +1820,14 @@
           syncBadge.innerHTML = `<span class="sync-dot"></span> متزامن مع السحابة`;
         }
       } else {
-        if (hudBtn) hudBtn.classList.remove('logged-in');
+        if (hudBtn) {
+          hudBtn.classList.remove('logged-in');
+          hudBtn.title = 'حفظ التقدم السحابي / تسجيل الدخول';
+        }
         if (hudIcon) hudIcon.innerHTML = UI_ICONS.cloud;
-        if (hudLabel) hudLabel.textContent = 'حفظ التقدم';
+        if (hudLabel) {
+          hudLabel.innerHTML = '<span class="auth-text-full">حفظ التقدم</span><span class="auth-text-short">حفظ</span>';
+        }
         if (loggedOutView) loggedOutView.style.display = 'block';
         if (loggedInView) loggedInView.style.display = 'none';
       }

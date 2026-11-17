@@ -57,8 +57,11 @@
       <div class="hud-actions">
         <!-- Cloud Sync & Auth Button -->
         <button class="hud-btn hud-auth-btn" id="hud-auth-btn" title="حفظ التقدم السحابي / تسجيل الدخول">
-          <svg class="hud-action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-          <span class="hud-auth-label" id="hud-auth-label">حفظ التقدم</span>
+          <span class="hud-auth-icon-wrap" id="hud-auth-icon">
+            <svg class="hud-action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          </span>
+          <span class="hud-auth-label" id="hud-auth-label"><span class="auth-text-full">حفظ التقدم</span><span class="auth-text-short">حفظ</span></span>
+          <span class="hud-auth-sync-dot" id="hud-auth-sync-dot"></span>
         </button>
 
         <!-- Dedicated Grammar Guidebook Button -->
