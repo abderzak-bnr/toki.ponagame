@@ -204,6 +204,23 @@
     return `<svg viewBox="0 0 100 100" class="sp-svg"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="8"/></svg>`;
   }
 
+  // --- UI VECTOR ICON ASSETS (Replaces generic emojis across the app) ---
+  const UI_ICONS = {
+    flame: `<svg class="ui-icon icon-flame" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-.5 2.5-2 4.5-3.5 6-1.5 1.5-2.5 3.5-2.5 5.5 0 4.42 3.58 8 8 8s8-3.58 8-8c0-3.5-2-6-4-8-.3 2.5-1.8 4-3.5 4 .2-2.5.5-5.5-2.5-7.5z"/></svg>`,
+    bolt: `<svg class="ui-icon icon-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>`,
+    heart: `<svg class="ui-icon icon-heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`,
+    speaker: `<svg class="ui-icon icon-audio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`,
+    slow: `<svg class="ui-icon icon-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    trophy: `<svg class="ui-icon icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H8v4h8v-4h-1c-.55 0-1-.45-1-1v-2.34"/><path d="M18 4H6v7a6 6 0 0 0 12 0V4z"/></svg>`,
+    lock: `<svg class="ui-icon icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+    star: `<svg class="ui-icon icon-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+    grammar: `<svg class="ui-icon icon-grammar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+    warning: `<svg class="ui-icon icon-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+    tip: `<svg class="ui-icon icon-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
+    cloud: `<svg class="ui-icon icon-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
+    user: `<svg class="ui-icon icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`
+  };
+
   // --- SUPABASE CONFIGURATION & CLIENT INITIALIZATION ---
   const SUPABASE_URL = 'https://lthggnfapmovwahqusbj.supabase.co';
   const SUPABASE_ANON_KEY = 'sb_publishable_xN4UA1ng2MQ_bIi9M0zAgw_9CdDJ4rV';
@@ -383,13 +400,14 @@
         banner.className = 'unit-banner';
         banner.innerHTML = `
           <div class="unit-banner-top">
-            <div style="display: flex; align-items: center; gap: 8px;">
+            <div class="unit-banner-meta">
               <span class="unit-number-tag">${unit.title}</span>
               <button class="unit-grammar-btn" data-unit="${unit.id}" title="شرح قواعد ${unit.title}">
-                <span>📖</span> شرح القواعد
+                ${UI_ICONS.grammar}
+                <span>شرح القواعد</span>
               </button>
             </div>
-            <span class="unit-icon">${unit.icon || '📘'}</span>
+            <span class="unit-domain-badge">${unit.id <= 9 ? 'pu suli' : 'ku suli'}</span>
           </div>
           <h2 class="unit-title">${unit.subtitle}</h2>
           <p class="unit-desc">${unit.description}</p>
@@ -428,10 +446,10 @@
           const glyphSvg = getSitelenSvg(firstWord);
 
           nodeWrapper.innerHTML = `
-            <button class="lesson-node-btn" data-unit="${unit.id}" data-lesson="${lesson.id}" ${!isUnlocked ? 'disabled' : ''}>
+            <button class="lesson-node-btn" data-unit="${unit.id}" data-lesson="${lesson.id}" ${!isUnlocked ? 'disabled' : ''} aria-label="${lesson.title}">
               <div class="node-icon-svg">${glyphSvg}</div>
-              ${isCompleted ? '<span class="node-star-badge">★</span>' : ''}
-              ${!isUnlocked ? '<span class="node-star-badge" style="background:#27272A">🔒</span>' : ''}
+              ${isCompleted ? `<span class="node-star-badge">${UI_ICONS.star}</span>` : ''}
+              ${!isUnlocked ? `<span class="node-star-badge lock-badge">${UI_ICONS.lock}</span>` : ''}
             </button>
             <span class="node-title-label">${lesson.title}</span>
           `;
@@ -459,12 +477,12 @@
 
         cpWrapper.className = `lesson-node-wrapper checkpoint-node-wrapper pos-checkpoint ${cpStatus}`;
         cpWrapper.innerHTML = `
-          <button class="lesson-node-btn checkpoint-node-btn" data-unit="${unit.id}" ${!isCpUnlocked ? 'disabled' : ''} title="اختبار نهاية ${unit.title}">
-            <div class="node-icon-svg checkpoint-trophy-svg">🏆</div>
-            ${isCpDone ? '<span class="node-star-badge gold-star">★</span>' : ''}
-            ${!isCpUnlocked ? '<span class="node-star-badge" style="background:#27272A">🔒</span>' : ''}
+          <button class="lesson-node-btn checkpoint-node-btn" data-unit="${unit.id}" ${!isCpUnlocked ? 'disabled' : ''} title="اختبار نهاية ${unit.title}" aria-label="اختبار إتقان الوحدة">
+            <div class="node-icon-svg checkpoint-trophy-svg">${UI_ICONS.trophy}</div>
+            ${isCpDone ? `<span class="node-star-badge gold-star">${UI_ICONS.star}</span>` : ''}
+            ${!isCpUnlocked ? `<span class="node-star-badge lock-badge">${UI_ICONS.lock}</span>` : ''}
           </button>
-          <span class="node-title-label checkpoint-title-label">🏆 اختبار الوحدة</span>
+          <span class="node-title-label checkpoint-title-label">اختبار إتقان الوحدة</span>
         `;
 
         const cpBtn = cpWrapper.querySelector('.checkpoint-node-btn');
@@ -512,7 +530,7 @@
         unit,
         lesson: {
           id: 'checkpoint',
-          title: `🏆 اختبار نهاية ${unit.title}`,
+          title: `اختبار إتقان ${unit.title}`,
           xpReward: 50,
           isCheckpoint: true
         },
@@ -788,7 +806,13 @@
     updateArenaHearts() {
       const session = this.currentLessonSession;
       if (!session) return;
-      document.getElementById('arena-hearts-count').textContent = '❤️'.repeat(session.hearts) || '💔';
+      const maxHearts = 3;
+      let html = '';
+      for (let i = 0; i < maxHearts; i++) {
+        const isFilled = i < session.hearts;
+        html += `<span class="arena-heart-item ${isFilled ? 'active' : 'depleted'}">${UI_ICONS.heart}</span>`;
+      }
+      document.getElementById('arena-hearts-count').innerHTML = html;
     },
 
     updateArenaProgress() {
@@ -841,18 +865,18 @@
       card.className = 'exercise-container';
       card.innerHTML = `
         <div class="intro-card">
-          <span class="intro-badge">كلمة جديدة ✨</span>
+          <span class="intro-badge">مفردة جديدة</span>
           <div class="intro-glyph-box">${glyphSvg}</div>
           <div class="intro-word-latin toki-text">${w.word}</div>
           <div class="intro-phonetic">النطق: [ ${w.phonetic} ]</div>
           <div class="intro-arabic-meaning">${w.ar}</div>
-          <button class="intro-audio-btn" id="intro-audio-trigger">
-            <span>🔊</span> استمع للنطق
+          <button class="intro-audio-btn" id="intro-audio-trigger" title="استمع للنطق">
+            ${UI_ICONS.speaker} <span>استمع للنطق</span>
           </button>
           <div class="intro-hint">${w.hint}</div>
           ${w.example ? `
             <div class="intro-example-box">
-              <span style="font-size:11px; color:var(--text-muted);">مثال تطبيقي:</span>
+              <span style="font-size:11px; color:var(--text-muted); font-weight:700;">مثال تطبيقي:</span>
               <div class="intro-example-tp">${w.example.tp}</div>
               <div class="intro-example-ar">${w.example.ar}</div>
             </div>
@@ -904,7 +928,7 @@
                 ${glyphsHtml}
                 <span class="example-tp toki-text">${ex.tp}</span>
               </div>
-              <button class="example-audio-btn" data-audio="${ex.tp}" title="استمع للنطق">🔊</button>
+              <button class="example-audio-btn" data-audio="${ex.tp}" title="استمع للنطق">${UI_ICONS.speaker}</button>
             </div>
             <div class="example-ar">${ex.ar}</div>
             ${ex.hint ? `<div class="example-subhint">${ex.hint}</div>` : ''}
@@ -914,7 +938,7 @@
 
       container.innerHTML = `
         <div class="grammar-intro-card">
-          <span class="grammar-badge">📐 قاعدة نحوية ذهبية</span>
+          <span class="grammar-badge">قاعدة نحوية أساسية</span>
           <h2 class="grammar-title">${rule.title}</h2>
           <div class="grammar-subtitle">${rule.subtitle}</div>
 
@@ -937,13 +961,13 @@
 
           ${rule.warning ? `
             <div class="grammar-warning-box">
-              <span class="warning-icon">⚠️</span>
+              <span class="warning-icon">${UI_ICONS.warning}</span>
               <span>${rule.warning}</span>
             </div>
           ` : ''}
 
           <button class="grammar-continue-btn" id="grammar-card-got-it">
-            فهمت، لنكمل ✨
+            فهمت، لنكمل
           </button>
         </div>
       `;
@@ -968,8 +992,8 @@
       const cardGotItBtn = container.querySelector('#grammar-card-got-it');
       if (cardGotItBtn) cardGotItBtn.addEventListener('click', advance);
 
-      // Activate bottom footer button with "فهمت، لنكمل ✨"
-      this.enableCheckButton('فهمت، لنكمل ✨', advance);
+      // Activate bottom footer button with "فهمت، لنكمل"
+      this.enableCheckButton('فهمت، لنكمل', advance);
     },
 
     // 2. Multiple Choice Question
@@ -986,7 +1010,7 @@
             <div class="mc-prompt-glyph">${glyphSvg}</div>
             <div class="mc-prompt-text toki-text">${w.word}</div>
           </div>
-          <button class="hud-btn" id="mc-audio-btn" title="استمع">🔊</button>
+          <button class="hud-btn" id="mc-audio-btn" title="استمع للنطق">${UI_ICONS.speaker}</button>
         </div>
         <div class="mc-options-grid" id="mc-options-grid"></div>
       `;
@@ -1040,7 +1064,7 @@
         <div class="exercise-prompt-title">قم بتركيب هذه الجملة بلغة توكي بونا:</div>
         <div class="builder-target-box">
           <span class="builder-prompt-sentence">${q.arabicPrompt}</span>
-          <button class="builder-audio-trigger" id="builder-audio-play" title="استمع للجملة">🔊</button>
+          <button class="builder-audio-trigger" id="builder-audio-play" title="استمع للجملة">${UI_ICONS.speaker}</button>
         </div>
         <div class="builder-answer-zone" id="builder-answer-zone"></div>
         <div class="builder-bank-zone" id="builder-bank-zone"></div>
@@ -1239,8 +1263,11 @@
         <div class="exercise-prompt-title">استمع واختر الكلمة التي سمعتها:</div>
         <div class="listening-center-box">
           <div class="listening-triggers-row">
-            <button class="listening-big-audio-btn" id="listening-play-normal" title="استماع عادي">🔊</button>
-            <button class="listening-slow-btn" id="listening-play-slow" title="استماع بطيء (سلحفاة)">🐢</button>
+            <button class="listening-big-audio-btn" id="listening-play-normal" title="استماع عادي">${UI_ICONS.speaker}</button>
+            <button class="listening-slow-btn" id="listening-play-slow" title="استماع بطيء (0.6x)">
+              ${UI_ICONS.slow}
+              <span class="slow-rate-tag">0.6x</span>
+            </button>
           </div>
           <span style="font-size:13px; color:var(--text-muted);">اضغط للاستماع بالنطق البشري الأصلي</span>
         </div>
@@ -1305,7 +1332,7 @@
         <div class="exercise-prompt-title">اكتب الترجمة بلغة توكي بونا:</div>
         <div class="builder-target-box">
           <span class="builder-prompt-sentence">${q.arabicPrompt}</span>
-          <button class="builder-audio-trigger" id="typing-audio-play" title="استمع للنطق">🔊</button>
+          <button class="builder-audio-trigger" id="typing-audio-play" title="استمع للنطق">${UI_ICONS.speaker}</button>
         </div>
         <div class="typing-input-wrapper">
           <input type="text"
@@ -1319,7 +1346,7 @@
                  placeholder="اكتب هنا بالتوكي بونا..." />
         </div>
         <div class="typing-hint-note">
-          💡 <strong>ملاحظة:</strong> تُكتب جميع كلمات توكي بونا بالأحرف الصغيرة فقط (لا توجد أحرف كبيرة في اللغة).
+          ${UI_ICONS.tip} <span><strong>تذكير نحوي:</strong> تُكتب جميع كلمات توكي بونا بالأحرف الصغيرة فقط (لا توجد أحرف كبيرة في اللغة).</span>
         </div>
       `;
 
@@ -1475,11 +1502,11 @@
       const victoryModal = document.getElementById('victory-modal');
       const victoryHeader = victoryModal.querySelector('h2');
       if (victoryHeader) {
-        victoryHeader.textContent = isCp ? `🏆 مبروك! اجتزت اختبار إتقان ${session.unit.title}` : 'رائع! أكملت الدرس بنجاح!';
+        victoryHeader.textContent = isCp ? `مبروك! اجتزت اختبار إتقان ${session.unit.title}` : 'أحسنت! أكملت الدرس بنجاح';
       }
       document.getElementById('victory-xp-earned').textContent = `+${xpEarned} XP`;
       document.getElementById('victory-accuracy').textContent = session.mistakesCount === 0 ? '100%' : `${Math.max(60, 100 - session.mistakesCount * 10)}%`;
-      document.getElementById('victory-streak').textContent = `${this.state.streak} أيام 🔥`;
+      document.getElementById('victory-streak').textContent = `${this.state.streak} ${this.state.streak === 1 ? 'يوم' : 'أيام'}`;
 
       victoryModal.style.display = 'flex';
     },
@@ -1557,7 +1584,7 @@
               </div>
               <div class="glossary-meaning-ar">${w.ar}</div>
             </div>
-            <button class="glossary-audio-btn" title="استمع للنطق">🔊</button>
+            <button class="glossary-audio-btn" title="استمع للنطق">${UI_ICONS.speaker}</button>
           `;
 
           item.querySelector('.glossary-audio-btn').addEventListener('click', () => {
@@ -1633,7 +1660,7 @@
                 <div class="guide-example-ar">${ex.ar}</div>
                 ${ex.hint ? `<div class="guide-example-hint">${ex.hint}</div>` : ''}
               </div>
-              <button class="example-audio-btn" data-audio="${ex.tp}" title="استمع للنطق">🔊</button>
+              <button class="example-audio-btn" data-audio="${ex.tp}" title="استمع للنطق">${UI_ICONS.speaker}</button>
             </div>
           `;
         }).join('');
@@ -1664,14 +1691,14 @@
 
           ${rule.warning ? `
             <div class="grammar-warning-box">
-              <span class="warning-icon">⚠️</span>
+              <span class="warning-icon">${UI_ICONS.warning}</span>
               <span>${rule.warning}</span>
             </div>
           ` : ''}
 
           ${rule.quickTip ? `
             <div class="guide-quicktip-box">
-              <span>💡 ${rule.quickTip}</span>
+              <div class="guide-quicktip-content">${UI_ICONS.tip} <span>${rule.quickTip}</span></div>
             </div>
           ` : ''}
         `;
@@ -1772,7 +1799,7 @@
 
       if (this.currentUser) {
         if (hudBtn) hudBtn.classList.add('logged-in');
-        if (hudIcon) hudIcon.textContent = '👤';
+        if (hudIcon) hudIcon.innerHTML = UI_ICONS.user;
         if (hudLabel) {
           const userPrefix = this.currentUser.email ? this.currentUser.email.split('@')[0] : 'حسابي';
           hudLabel.textContent = userPrefix;
@@ -1781,7 +1808,7 @@
         if (loggedInView) loggedInView.style.display = 'block';
         if (profileEmail) profileEmail.textContent = this.currentUser.email || 'مستخدم مسجل';
         if (syncXp) syncXp.textContent = this.state.xp || 0;
-        if (syncStreak) syncStreak.textContent = `${this.state.streak || 1} 🔥`;
+        if (syncStreak) syncStreak.textContent = `${this.state.streak || 1} يوم`;
         if (syncLessons) {
           const count = Object.keys(this.state.completedLessons || {}).length;
           syncLessons.textContent = count;
@@ -1791,7 +1818,7 @@
         }
       } else {
         if (hudBtn) hudBtn.classList.remove('logged-in');
-        if (hudIcon) hudIcon.textContent = '☁️';
+        if (hudIcon) hudIcon.innerHTML = UI_ICONS.cloud;
         if (hudLabel) hudLabel.textContent = 'حفظ التقدم';
         if (loggedOutView) loggedOutView.style.display = 'block';
         if (loggedInView) loggedInView.style.display = 'none';
@@ -1884,7 +1911,7 @@
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'تسجيل الدخول ومزامنة التقدم ⚡';
+          submitBtn.textContent = 'تسجيل الدخول ومزامنة التقدم';
         }
       }
     },
@@ -1923,7 +1950,7 @@
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'جاري إنشاء الحساب وحفظ التقدم... ⏳';
+        submitBtn.textContent = 'جاري إنشاء الحساب وحفظ التقدم...';
       }
 
       try {
@@ -1942,7 +1969,7 @@
           if (data.session && data.user) {
             // Directly logged in
             this.currentUser = data.user;
-            this.showAuthStatus('signup', '🎉 تم إنشاء الحساب بنجاح! يتم الآن حفظ تقدمك الحالي على السحابة.', false);
+            this.showAuthStatus('signup', 'تم إنشاء الحساب بنجاح! يتم الآن حفظ تقدمك الحالي على السحابة.', false);
             await this.syncProgressToCloud();
             this.updateAuthUI();
             setTimeout(() => {
@@ -1962,7 +1989,7 @@
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'إنشاء الحساب وحفظ التقدم ✨';
+          submitBtn.textContent = 'إنشاء الحساب وحفظ التقدم';
         }
       }
     },
@@ -2095,7 +2122,7 @@
       const syncBtn = document.getElementById('btn-manual-sync');
       if (syncBtn) {
         syncBtn.disabled = true;
-        syncBtn.textContent = 'جاري المزامنة... ⏳';
+        syncBtn.textContent = 'جاري المزامنة...';
       }
 
       await this.syncProgressToCloud();
@@ -2104,7 +2131,7 @@
         syncBtn.textContent = 'تمت المزامنة بنجاح ✓';
         setTimeout(() => {
           syncBtn.disabled = false;
-          syncBtn.textContent = 'مزامنة السحابة الآن 🔄';
+          syncBtn.textContent = 'مزامنة السحابة الآن';
         }, 1200);
       }
     },
@@ -2255,7 +2282,7 @@
     // 1. Check if user put 'li' after 'mi' or 'sina' (when single pronoun)
     if ((userTokens[0] === 'mi' || userTokens[0] === 'sina') && userTokens[1] === 'li') {
       if (correctTokens[0] === userTokens[0] && correctTokens[1] !== 'li') {
-        return `💡 خطأ شائع في أداة الربط: لا نضع "li" مطلقاً بعد "mi" (أنا) أو "sina" (أنت) بمفردهما! احذف "li" واكتب الفعل أو الصفة مباشرة بعد الضمير.`;
+        return `ملاحظة نحوية: لا نضع "li" مطلقاً بعد "mi" (أنا) أو "sina" (أنت) بمفردهما! احذف "li" واكتب الفعل أو الصفة مباشرة بعد الضمير.`;
       }
     }
 
@@ -2265,7 +2292,7 @@
     if (correctHasLi && !userHasLi) {
       const liIndex = correctTokens.indexOf('li');
       const subject = correctTokens.slice(0, liIndex).join(' ');
-      return `💡 نسيت أداة الربط "li"! في توكي بونا، يجب وضع "li" دائماً بعد الفاعل ("${subject}") لفصله عن الفعل أو الوصف.`;
+      return `ملاحظة نحوية: نسيت أداة الربط "li"! في توكي بونا، يجب وضع "li" دائماً بعد الفاعل ("${subject}") لفصله عن الفعل أو الوصف.`;
     }
 
     // 3. Check if user put 'li' in wrong position
@@ -2273,7 +2300,7 @@
       const correctLiIndex = correctTokens.indexOf('li');
       const userLiIndex = userTokens.indexOf('li');
       if (correctLiIndex !== userLiIndex) {
-        return `💡 موضع أداة "li" غير صحيح: توضع "li" مباشرة بعد نهاية الفاعل وقبل الفعل أو الصفة.`;
+        return `ملاحظة نحوية: موضع أداة "li" غير صحيح: توضع "li" مباشرة بعد نهاية الفاعل وقبل الفعل أو الصفة.`;
       }
     }
 
@@ -2283,12 +2310,12 @@
     if (correctHasE && !userHasE) {
       const eIndex = correctTokens.indexOf('e');
       const objectPart = correctTokens.slice(eIndex + 1).join(' ');
-      return `💡 نسيت أداة المفعول به "e"! تأتي "e" دائماً قبل الشيء الذي يقع عليه الفعل مباشرة ("${objectPart}").`;
+      return `ملاحظة نحوية: نسيت أداة المفعول به "e"! تأتي "e" دائماً قبل الشيء الذي يقع عليه الفعل مباشرة ("${objectPart}").`;
     }
 
     // 5. Check if user mistakenly added 'e' when there is no direct object
     if (!correctHasE && userHasE) {
-      return `💡 انتبه: أداة "e" تُستخدم فقط قبل المفعول به المباشر بعد الأفعال المتعدية. هذه الجملة لا تحتاج إلى "e".`;
+      return `تنبيه نحوي: أداة "e" تُستخدم فقط قبل المفعول به المباشر بعد الأفعال المتعدية. هذه الجملة لا تحتاج إلى "e".`;
     }
 
     // 6. Check if user inverted Noun and Adjective order
@@ -2299,7 +2326,7 @@
           w2 !== 'li' && w2 !== 'e' && w2 !== 'pi' && w2 !== 'la') {
         const userIndexW2 = userTokens.indexOf(w2);
         if (userIndexW2 !== -1 && userTokens[userIndexW2 + 1] === w1) {
-          return `💡 ترتيب الاسم والصفة: في توكي بونا، الاسم يسبق الصفة دائماً (مثل العربية: "${w1} ${w2}" وليس "${w2} ${w1}").`;
+          return `ملاحظة في الترتيب: في توكي بونا، الاسم يسبق الصفة دائماً (مثل العربية: "${w1} ${w2}" وليس "${w2} ${w1}").`;
         }
       }
     }
@@ -2308,18 +2335,18 @@
     const correctHasLa = correctTokens.includes('la');
     const userHasLa = userTokens.includes('la');
     if (correctHasLa && !userHasLa) {
-      return `💡 نسيت أداة السياق والشرط "la"! تأتي "la" بعد عبارة الزمان أو الشرط لتفصلها عن الجملة الرئيسية.`;
+      return `ملاحظة نحوية: نسيت أداة السياق والشرط "la"! تأتي "la" بعد عبارة الزمان أو الشرط لتفصلها عن الجملة الرئيسية.`;
     }
 
     // 8. Check 'pi' grouping marker
     const correctHasPi = correctTokens.includes('pi');
     const userHasPi = userTokens.includes('pi');
     if (correctHasPi && !userHasPi) {
-      return `💡 نسيت أداة التجميع "pi"! تُستخدم "pi" لإعادة تجميع الكلمات الوصفية معاً ككتلة واحدة للاسم السابق.`;
+      return `ملاحظة نحوية: نسيت أداة التجميع "pi"! تُستخدم "pi" لإعادة تجميع الكلمات الوصفية معاً ككتلة واحدة للاسم السابق.`;
     }
 
     // 9. General word order guidance
-    return `💡 ترتيب الجملة: في توكي بونا، التركيب السليم هو: [الفاعل] + (li) + [الفعل] + (e) + [المفعول به].`;
+    return `ملاحظة في بناء الجملة: في توكي بونا، التركيب السليم هو: [الفاعل] + (li) + [الفعل] + (e) + [المفعول به].`;
   }
 
   // --- TOKEN & SENTENCE EQUIVALENCE HELPERS FOR ACTIVE TYPING ---

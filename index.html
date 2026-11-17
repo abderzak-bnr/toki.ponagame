@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>توكي بونا | تعلم لغة البساطة والخير (Duolingo Style)</title>
+  <title>توكي بونا | تعلّم لغة البساطة الرسمية (137 كلمة)</title>
   
   <!-- Favicon & Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -23,8 +23,11 @@
          TOP HUD BAR (Fixed Navigation & Stats)
          ====================================================================== -->
     <header class="top-hud">
-      <div class="hud-brand" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <div class="hud-logo-icon">󱥬</div>
+      <div class="hud-brand" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="الصفحة الرئيسية">
+        <div class="hud-logo-icon" aria-label="pona">
+          <!-- Sitelen Pona glyph for 'pona' (smiling face) -->
+          <svg viewBox="-10 0 763 1000" class="logo-sp-svg"><path fill="currentColor" d="M305 398q7 0 50 -1t83 -2l41 -1q104 0 136 5q22 4 29 8t14 17q5 10 5 17q0 11 -13.5 31t-13.5 38q0 41 -16.5 87.5t-29.5 46.5q-4 0 -35.5 27.5t-45.5 30.5q-13 2 -13 14q0 10 -2.5 12t-16.5 3q-1 0 -41 7t-56 7q-23 -3 -41 -3q-41 -1 -78 -17.5t-42 -17.5 q-20 -4 -39.5 -15t-24.5 -22q-3 -6 -30 -46t-28 -49l-1 -3q-1 -3 -3 -8.5t-4 -12.5t-4.5 -17t-4.5 -21t-3 -24.5t-1 -26.5q0 -25 16 -43t30 -21q5 -1 61 -1l60 1h62zM584 485q0 -10 -8.5 -16t-27 -8.5t-32.5 -3t-40 -0.5q-93 0 -151 6t-145 7h-32l2 25q4 25 -1 30 q-5 6 13 32q15 23 27 44q8 13 22.5 24t22.5 11q9 0 9 2q0 5 16.5 14t50 17t71.5 8q33 0 58.5 -12t26.5 -12q2 0 15.5 -12t28.5 -14q19 -3 19 -14q0 -9 9 -14.5t11 -10.5q1 -4 8 -15t13.5 -27t9.5 -35zM133 168q18 0 41.5 19t42.5 38.5t27 19.5q9 0 18 13.5t9 27.5 q0 24 -24 24q-16 0 -40 -16t-29 -18q-6 -2 -14.5 -11.5t-22.5 -13.5q-12 -4 -29.5 -16.5t-17.5 -21.5q0 -6 1 -13.5t11 -19.5t27 -12zM451 253q0 -2 0.5 -4.5t2 -9.5t4 -12.5t8.5 -10t14 -4.5q11 0 56.5 -46.5t59.5 -52.5q9 -3 21 -3h1q26 0 26 34q0 16 -26 33 q-14 9 -41.5 36t-50.5 49t-29 22q-13 -8 -21 -8q-25 0 -25 -23zM316 120q0 -9 -2 -26t-2 -26q0 -16 8.5 -27t16 -15t11.5 -4l12 6q16 6 16 96q0 60 -3.5 76t-16.5 16q-21 0 -29.5 -10.5t-10 -23t-4.5 -13.5q-4 -1 -4 -5q0 -2 4 -16t4 -28z"/></svg>
+        </div>
         <div class="hud-title-group">
           <h1>توكي بونا</h1>
           <p>toki pona</p>
@@ -34,19 +37,19 @@
       <div class="hud-stats">
         <!-- Daily Streak Badge -->
         <div class="hud-badge streak" title="أيام الحماس المتتالية">
-          <span>🔥</span>
+          <svg class="hud-stat-svg icon-flame" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-.5 2.5-2 4.5-3.5 6-1.5 1.5-2.5 3.5-2.5 5.5 0 4.42 3.58 8 8 8s8-3.58 8-8c0-3.5-2-6-4-8-.3 2.5-1.8 4-3.5 4 .2-2.5.5-5.5-2.5-7.5z"/></svg>
           <span id="hud-streak-count">1</span>
         </div>
 
         <!-- Total XP Badge -->
         <div class="hud-badge xp" title="نقاط الخبرة الكلية">
-          <span>⚡</span>
+          <svg class="hud-stat-svg icon-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
           <span id="hud-xp-count">0</span>
         </div>
 
         <!-- Hearts Remaining -->
         <div class="hud-badge hearts" title="القلوب المتاحة">
-          <span>❤️</span>
+          <svg class="hud-stat-svg icon-heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
           <span id="hud-hearts-count">3</span>
         </div>
       </div>
@@ -54,24 +57,24 @@
       <div class="hud-actions">
         <!-- Cloud Sync & Auth Button -->
         <button class="hud-btn hud-auth-btn" id="hud-auth-btn" title="حفظ التقدم السحابي / تسجيل الدخول">
-          <span id="hud-auth-icon">☁️</span>
+          <svg class="hud-action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
           <span class="hud-auth-label" id="hud-auth-label">حفظ التقدم</span>
         </button>
 
         <!-- Dedicated Grammar Guidebook Button -->
         <button class="hud-btn hud-grammar-btn" id="hud-grammar-btn" title="دليل القواعد النحوية">
-          <span>📖</span>
+          <svg class="hud-action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
           <span class="hud-grammar-label">القواعد</span>
         </button>
 
         <!-- Mini Glossary Button -->
         <button class="hud-btn" id="hud-glossary-btn" title="معجم الكلمات والرموز (137 كلمة)">
-          📚
+          <svg class="hud-action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </button>
 
         <!-- Settings Button -->
         <button class="hud-btn" id="hud-settings-btn" title="الإعدادات">
-          ⚙️
+          <svg class="hud-action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         </button>
       </div>
     </header>
@@ -127,22 +130,43 @@
        ====================================================================== -->
   <div class="victory-modal-overlay" id="victory-modal" style="display: none;">
     <div class="victory-card">
-      <div class="victory-trophy">🏆</div>
-      <h2 class="victory-title">أحسنت! اكتمل الدرس بنجاح</h2>
-      <p class="victory-subtitle">لقد أتقنت كلمات جديدة في لغة توكي بونا!</p>
+      <div class="victory-crest-box">
+        <!-- Bespoke celebratory Sitelen Pona medal -->
+        <svg viewBox="0 0 80 80" class="victory-crest-svg">
+          <circle cx="40" cy="40" r="38" fill="#18181B" stroke="#B8FF29" stroke-width="3"/>
+          <path d="M40 18l6.18 12.52L60 32.53l-10 9.75 2.36 13.72L40 49.52l-12.36 6.48L30 42.28l-10-9.75 13.82-2.01z" fill="#B8FF29"/>
+        </svg>
+      </div>
+      <h2 class="victory-title" id="victory-title">أحسنت! اكتمل الدرس بنجاح</h2>
+      <p class="victory-subtitle">أتقنت مفردات جديدة وقواعد نحوية في هذه المحطة من مسار التعلم.</p>
 
-      <div class="victory-stats-row">
-        <div class="victory-stat-box">
-          <span class="victory-stat-value" id="victory-xp-earned" style="color: var(--accent-lime);">+25 XP</span>
-          <span class="victory-stat-label">النقاط المكتسبة</span>
+      <!-- Content-driven asymmetric stats layout (replaces 3 identical cards) -->
+      <div class="victory-stats-layout">
+        <div class="victory-stat-hero">
+          <div class="stat-hero-icon-box">
+            <svg class="ui-icon icon-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+          </div>
+          <div class="stat-hero-content">
+            <span class="victory-stat-value" id="victory-xp-earned">+25 XP</span>
+            <span class="victory-stat-label">النقاط المكتسبة</span>
+          </div>
         </div>
-        <div class="victory-stat-box">
-          <span class="victory-stat-value" id="victory-accuracy" style="color: var(--accent-cyan);">100%</span>
-          <span class="victory-stat-label">الدقة</span>
-        </div>
-        <div class="victory-stat-box">
-          <span class="victory-stat-value" id="victory-streak" style="color: var(--accent-pink);">1 🔥</span>
-          <span class="victory-stat-label">الحماس اليومي</span>
+
+        <div class="victory-stats-subgrid">
+          <div class="victory-stat-subcard accuracy">
+            <div class="stat-subcard-header">
+              <svg class="ui-icon icon-accuracy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              <span class="victory-stat-label">معدل الدقة</span>
+            </div>
+            <span class="victory-stat-subvalue" id="victory-accuracy">100%</span>
+          </div>
+          <div class="victory-stat-subcard streak">
+            <div class="stat-subcard-header">
+              <svg class="ui-icon icon-flame" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-.5 2.5-2 4.5-3.5 6-1.5 1.5-2.5 3.5-2.5 5.5 0 4.42 3.58 8 8 8s8-3.58 8-8c0-3.5-2-6-4-8-.3 2.5-1.8 4-3.5 4 .2-2.5.5-5.5-2.5-7.5z"/></svg>
+              <span class="victory-stat-label">أيام الحماس</span>
+            </div>
+            <span class="victory-stat-subvalue" id="victory-streak">1 يوم</span>
+          </div>
         </div>
       </div>
 
@@ -160,9 +184,9 @@
       <div class="drawer-header">
         <div class="drawer-title-group">
           <h2>معجم توكي بونا الكامل</h2>
-          <p id="glossary-count">137 كلمة رسمية (pu + ku suli)</p>
+          <p id="glossary-count">137 كلمة رسمية مع الرموز والنطق والترجمة (pu + ku suli)</p>
         </div>
-        <button class="drawer-close-btn" onclick="app.closeModal('glossary-drawer-modal')">✕</button>
+        <button class="drawer-close-btn" onclick="app.closeModal('glossary-drawer-modal')" title="إغلاق">✕</button>
       </div>
 
       <div class="drawer-search-bar">
@@ -197,10 +221,10 @@
     <aside class="glossary-drawer grammar-guide-drawer">
       <div class="drawer-header">
         <div class="drawer-title-group">
-          <h2>📖 دليل قواعد توكي بونا الكامل</h2>
-          <p>أسرار القواعد والبناء اللغوي المبسط</p>
+          <h2>دليل قواعد توكي بونا</h2>
+          <p>المرجع النحوي الشامل: أدوات الربط، المفعول به، وترتيب الكلمات</p>
         </div>
-        <button class="drawer-close-btn" onclick="app.closeModal('grammar-guide-modal')">✕</button>
+        <button class="drawer-close-btn" onclick="app.closeModal('grammar-guide-modal')" title="إغلاق">✕</button>
       </div>
 
       <!-- Quick Jump Rule Tabs -->
@@ -256,7 +280,7 @@
 
       <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
         <button class="btn-danger" id="btn-reset-progress">
-          ⚠️ إعادة تعيين كل التقدم
+          إعادة تعيين التقدم بالكامل
         </button>
       </div>
     </div>
@@ -268,11 +292,11 @@
   <div class="settings-modal-overlay" id="auth-modal" style="display: none;" onclick="if(event.target === this) app.closeModal('auth-modal')">
     <div class="settings-card auth-modal-card">
       <div class="settings-header">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 22px;">☁️</span>
-          <h3 id="auth-modal-title">الحفظ السحابي للحساب</h3>
+        <div class="drawer-title-group">
+          <h3 id="auth-modal-title">الحفظ السحابي ومزامنة التقدم</h3>
+          <p>مزامنة مستواك وإحصائياتك عبر السحابة للوصول إليها من أي جهاز</p>
         </div>
-        <button class="drawer-close-btn" onclick="app.closeModal('auth-modal')">✕</button>
+        <button class="drawer-close-btn" onclick="app.closeModal('auth-modal')" title="إغلاق">✕</button>
       </div>
 
       <!-- Logged-Out View (Tabs: Login & Signup) -->
@@ -294,7 +318,7 @@
           </div>
           <div class="auth-status-msg" id="login-status-msg" style="display:none;"></div>
           <button type="submit" class="arena-check-btn btn-continue-correct auth-submit-btn" id="login-submit-btn">
-            تسجيل الدخول ومزامنة التقدم ⚡
+            تسجيل الدخول ومزامنة التقدم
           </button>
         </form>
 
@@ -314,19 +338,21 @@
           </div>
           <div class="auth-status-msg" id="signup-status-msg" style="display:none;"></div>
           <button type="submit" class="arena-check-btn btn-continue-correct auth-submit-btn" id="signup-submit-btn">
-            إنشاء الحساب وحفظ التقدم ✨
+            إنشاء الحساب وحفظ التقدم
           </button>
         </form>
 
         <p class="auth-footer-note">
-          🔒 بياناتك مشفرة ومحفوظة عبر خوادم Supabase الآمنة بتقنية Row Level Security.
+          بياناتك مشفرة ومحفوظة سحابياً عبر قاعدة بيانات Supabase بتقنية Row Level Security.
         </p>
       </div>
 
       <!-- Logged-In View (Account Details & Cloud Sync Status) -->
       <div id="auth-logged-in-view" style="display:none;">
         <div class="auth-profile-box">
-          <div class="auth-avatar-circle">👤</div>
+          <div class="auth-avatar-circle">
+            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
           <div class="auth-user-info">
             <span class="auth-user-email-text" id="auth-profile-email" dir="ltr">user@example.com</span>
             <span class="auth-sync-status-badge" id="auth-sync-status-badge">
@@ -341,8 +367,8 @@
             <span class="stat-lbl">نقاط الخبرة (XP)</span>
           </div>
           <div class="auth-stat-card">
-            <span class="stat-num" id="auth-synced-streak">1 🔥</span>
-            <span class="stat-lbl">الحماس اليومي</span>
+            <span class="stat-num" id="auth-synced-streak">1</span>
+            <span class="stat-lbl">أيام الحماس</span>
           </div>
           <div class="auth-stat-card">
             <span class="stat-num" id="auth-synced-lessons">0</span>
@@ -352,10 +378,10 @@
 
         <div class="auth-actions-group">
           <button class="arena-check-btn auth-sync-btn" id="btn-manual-sync" onclick="app.manualSync()">
-            مزامنة السحابة الآن 🔄
+            مزامنة السحابة الآن
           </button>
           <button class="btn-danger auth-logout-btn" onclick="app.handleSignOut()">
-            تسجيل الخروج 🚪
+            تسجيل الخروج
           </button>
         </div>
       </div>
